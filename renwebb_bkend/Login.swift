@@ -114,6 +114,7 @@ class Login {
                             do {
                                 let doc: Document = try SwiftSoup.parse(response.result.value!)
                                 let forms: Elements = try doc.select("form")
+                                if (forms.array().count > 1) {
                                 for i in 1...(forms.array().count - 1) {
                                     let fields: Elements = try forms.get(i).select("input")
                                     try gradeURLs.append("https://tws-tn.client.renweb.com/renweb/reports/parentsweb/parentsweb_reports.cfm?"
@@ -125,6 +126,7 @@ class Login {
                                         + "&ClassID=" + fields.get(6).attr("value")
                                         + "&TermID=" + fields.get(7).attr("value"))
                                     try studentID = fields.get(5).attr("value")
+                                    }
                                 }
                                 /*print(gradeURLs.count)
                                  print(gradeURLs[0])
