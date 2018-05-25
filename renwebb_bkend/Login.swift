@@ -64,36 +64,9 @@ class Login {
                     // set cookies for future requests
                     Alamofire.SessionManager.default.session.configuration.httpCookieStorage?.setCookies(cookies, for: response.response?.url, mainDocumentURL: nil)
                     
-                    /*
-                     self.getScheduleUrl(completion: {scheduleUrl in
-                     if let scheduleUrl = scheduleUrl {
-                     print(scheduleUrl)
-                     DispatchQueue.main.async {
-                     Lurl.text = scheduleUrl
-                     }
-                     }
-                     })
-                     */
-                    
-                    /*
-                     // MARK: HTTP(GET) request and process schedule
-                     Alamofire.request(scheduleURL!).responseString { response in
-                     print(response.result.value!)
-                     do {
-                     let doc: Document = try SwiftSoup.parse(response.result.value!)
-                     let courseEntries = try doc.select("body > table:nth-child(2) > tbody:nth-child(2) > tr")
-                     
-                     } catch Exception.Error(let message) {
-                     print(message)
-                     } catch {
-                     print("Error processing schedule!")
-                     }
-                     }
-                     */
-                    
                     //MARK: GET scheduleURL
                     Alamofire.request("https://tws-tn.client.renweb.com/pw/student/schedules.cfm").responseString { response in
-                        print(response.result.value!)
+                        //print(response.result.value!)
                         do {
                             let doc: Document = try SwiftSoup.parse(response.result.value!)
                             let graybutton: Element? = try doc.select(".graybutton.printout").first()
@@ -102,6 +75,8 @@ class Login {
                                 return
                             }
                             scheduleURL = try "https://tws-tn.client.renweb.com" + graybutton!.attr("href")
+                            // TODO: check if all studentIDs are 7 digits
+                            studentID = String(scheduleURL.suffix(7))
                         } catch Exception.Error(let message) {
                             print(message)
                         } catch {
@@ -115,24 +90,20 @@ class Login {
                                 let doc: Document = try SwiftSoup.parse(response.result.value!)
                                 let forms: Elements = try doc.select("form")
                                 if (forms.array().count > 1) {
-                                for i in 1...(forms.array().count - 1) {
-                                    let fields: Elements = try forms.get(i).select("input")
-                                    try gradeURLs.append("https://tws-tn.client.renweb.com/renweb/reports/parentsweb/parentsweb_reports.cfm?"
-                                        + "District=TWS-TN" + "&ReportType=Gradebook"
-                                        + "&sessionid=" + fields.get(2).attr("value")
-                                        + "&ReportHash=" + fields.get(3).attr("value")
-                                        + "&SchoolCode=TWS-TN"
-                                        + "&StudentID=" + fields.get(5).attr("value")
-                                        + "&ClassID=" + fields.get(6).attr("value")
-                                        + "&TermID=" + fields.get(7).attr("value"))
-                                    try studentID = fields.get(5).attr("value")
-                                    }
+                                    for i in 1...(forms.array().count - 1) {
+                                        let fields: Elements = try forms.get(i).select("input")
+                                        try gradeURLs.append("https://tws-tn.client.renweb.com/renweb/reports/parentsweb/parentsweb_reports.cfm?"
+                                            + "District=TWS-TN" + "&ReportType=Gradebook"
+                                            + "&sessionid=" + fields.get(2).attr("value")
+                                            + "&ReportHash=" + fields.get(3).attr("value")
+                                            + "&SchoolCode=TWS-TN"
+                                            + "&StudentID=" + fields.get(5).attr("value")
+                                            + "&ClassID=" + fields.get(6).attr("value")
+                                            + "&TermID=" + fields.get(7).attr("value"))
+                                        }
+                                } else {
+                                    
                                 }
-                                /*print(gradeURLs.count)
-                                 print(gradeURLs[0])
-                                 Alamofire.request(gradeURLs[0]).responseString { response in
-                                 print(response.result.value!)
-                                 }*/
                             } catch Exception.Error(let message) {
                                 print(message)
                             } catch {
@@ -144,6 +115,69 @@ class Login {
                     
                 }
         }
+    }
+    
+    static func attemptKeychainLogin(completion: @escaping (Bool) -> ()) {
+        do {
+            let loginComb: [String]? = try KeychainServices.getKeychainItem()
+            initializeRenweb(username: loginComb![0], password: loginComb![1], completion: { (success) -> Void in
+                if success {
+                    completion(true)
+                } else {
+                    do {
+                        try KeychainServices.deleteKeychainItems()
+                    } catch KeychainError.unhandledError(let status) {
+                        print(status)
+                    } catch {
+                        
+                    }
+                    completion(false)
+                }
+            })
+        } catch KeychainError.noPassword {
+            completion(false)
+        } catch KeychainError.unexpectedPasswordData {
+            completion(false)
+        } catch KeychainError.unhandledError(let status) {
+            print (status)
+            completion(false)
+        } catch {
+            completion(false)
+        }
+    }
+    
+    static func attemptUserLogin(username: String, password: String, completion: @escaping (Bool) -> ()) {
+        initializeRenweb(username: username, password: password, completion: { (success) -> Void in
+            if success {
+                do {
+                    let _ = try KeychainServices.getKeychainItem()
+                } catch KeychainError.noPassword {
+                    do {
+                        try KeychainServices.addKeychainItem(username: "thenewpotato", password: password)
+                    } catch KeychainError.unhandledError(let status) {
+                        print(status)
+                    } catch {
+                        
+                    }
+                } catch KeychainError.unexpectedPasswordData {
+                    
+                } catch KeychainError.unhandledError(let status) {
+                    print (status)
+                } catch {
+                    
+                }
+                completion(true)
+            } else {
+                do {
+                    try KeychainServices.deleteKeychainItems()
+                } catch KeychainError.unhandledError(let status) {
+                    print(status)
+                } catch {
+                    
+                }
+                completion(false)
+            }
+        })
     }
     
     /*

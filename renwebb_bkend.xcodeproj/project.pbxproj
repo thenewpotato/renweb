@@ -11,16 +11,20 @@
 		E24DA95D20547E3B00CDDDDA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24DA95C20547E3B00CDDDDA /* LoginViewController.swift */; };
 		E24DA96020547E3B00CDDDDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E24DA95E20547E3B00CDDDDA /* Main.storyboard */; };
 		E24DA96220547E3B00CDDDDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E24DA96120547E3B00CDDDDA /* Assets.xcassets */; };
-		E24DA96520547E3B00CDDDDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E24DA96320547E3B00CDDDDA /* LaunchScreen.storyboard */; };
 		E24DA97020547E3B00CDDDDA /* renwebb_bkendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24DA96F20547E3B00CDDDDA /* renwebb_bkendTests.swift */; };
 		E24DA97B20547E3B00CDDDDA /* renwebb_bkendUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24DA97A20547E3B00CDDDDA /* renwebb_bkendUITests.swift */; };
 		E24DA9A120547F0400CDDDDA /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E24DA99420547EC500CDDDDA /* Alamofire.framework */; };
 		E24DA9A220547F0400CDDDDA /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E24DA99420547EC500CDDDDA /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E24DA9A720547FD600CDDDDA /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24DA9A620547FD600CDDDDA /* Login.swift */; };
-		E26120082054CE0800871ADA /* SwiftSoup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2611FFF2054CDE900871ADA /* SwiftSoup.framework */; };
-		E26120092054CE0800871ADA /* SwiftSoup.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E2611FFF2054CDE900871ADA /* SwiftSoup.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E260477220B4F0720075DB03 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260477120B4F0720075DB03 /* Schedule.swift */; };
 		E26E04582072F3BD00EAA7DF /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26E04572072F3BD00EAA7DF /* KeychainError.swift */; };
 		E290E1152071CC56008BE638 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E290E1142071CC56008BE638 /* HomeViewController.swift */; };
+		E2BA858F20B1E5ED00A37950 /* SwiftSoup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2BA858620B1E5A300A37950 /* SwiftSoup.framework */; };
+		E2BA859020B1E5ED00A37950 /* SwiftSoup.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E2BA858620B1E5A300A37950 /* SwiftSoup.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E2BA859420B1E69000A37950 /* KeychainServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BA859320B1E69000A37950 /* KeychainServices.swift */; };
+		E2BA859620B21B8700A37950 /* GradebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BA859520B21B8700A37950 /* GradebookViewController.swift */; };
+		E2BA85A920B228AE00A37950 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BA85A820B228AE00A37950 /* ScheduleViewController.swift */; };
+		E2BA85AB20B228C500A37950 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BA85AA20B228C500A37950 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,44 +98,44 @@
 			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
 			remoteInfo = "Alamofire iOS";
 		};
-		E2611FFE2054CDE900871ADA /* PBXContainerItemProxy */ = {
+		E2BA858520B1E5A300A37950 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E2611FEF2054CDE800871ADA /* SwiftSoup.xcodeproj */;
+			containerPortal = E2BA857D20B1E5A200A37950 /* SwiftSoup.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8CE418161DAA54A900240B42;
 			remoteInfo = "SwiftSoup-iOS";
 		};
-		E26120002054CDE900871ADA /* PBXContainerItemProxy */ = {
+		E2BA858720B1E5A300A37950 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E2611FEF2054CDE800871ADA /* SwiftSoup.xcodeproj */;
+			containerPortal = E2BA857D20B1E5A200A37950 /* SwiftSoup.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BD3B5BA91FBED933001FDB3B;
 			remoteInfo = "SwiftSoup-macOS";
 		};
-		E26120022054CDE900871ADA /* PBXContainerItemProxy */ = {
+		E2BA858920B1E5A300A37950 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E2611FEF2054CDE800871ADA /* SwiftSoup.xcodeproj */;
+			containerPortal = E2BA857D20B1E5A200A37950 /* SwiftSoup.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BD3B5BEC1FC063BD001FDB3B;
 			remoteInfo = "SwiftSoup-tvOS";
 		};
-		E26120042054CDE900871ADA /* PBXContainerItemProxy */ = {
+		E2BA858B20B1E5A300A37950 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E2611FEF2054CDE800871ADA /* SwiftSoup.xcodeproj */;
+			containerPortal = E2BA857D20B1E5A200A37950 /* SwiftSoup.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BD3B5C2F1FC06423001FDB3B;
 			remoteInfo = "SwiftSoup-watchOS";
 		};
-		E26120062054CDE900871ADA /* PBXContainerItemProxy */ = {
+		E2BA858D20B1E5A300A37950 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E2611FEF2054CDE800871ADA /* SwiftSoup.xcodeproj */;
+			containerPortal = E2BA857D20B1E5A200A37950 /* SwiftSoup.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8CE4181F1DAA54A900240B42;
 			remoteInfo = SwiftSoupTests;
 		};
-		E261200A2054CE0800871ADA /* PBXContainerItemProxy */ = {
+		E2BA859120B1E5ED00A37950 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E2611FEF2054CDE800871ADA /* SwiftSoup.xcodeproj */;
+			containerPortal = E2BA857D20B1E5A200A37950 /* SwiftSoup.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 8CE418151DAA54A900240B42;
 			remoteInfo = "SwiftSoup-iOS";
@@ -146,7 +150,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				E24DA9A220547F0400CDDDDA /* Alamofire.framework in Embed Frameworks */,
-				E26120092054CE0800871ADA /* SwiftSoup.framework in Embed Frameworks */,
+				E2BA859020B1E5ED00A37950 /* SwiftSoup.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,7 +163,6 @@
 		E24DA95C20547E3B00CDDDDA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E24DA95F20547E3B00CDDDDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E24DA96120547E3B00CDDDDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E24DA96420547E3B00CDDDDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E24DA96620547E3B00CDDDDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E24DA96B20547E3B00CDDDDA /* renwebb_bkendTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = renwebb_bkendTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E24DA96F20547E3B00CDDDDA /* renwebb_bkendTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = renwebb_bkendTests.swift; sourceTree = "<group>"; };
@@ -169,9 +172,14 @@
 		E24DA97C20547E3B00CDDDDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E24DA98820547EC500CDDDDA /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		E24DA9A620547FD600CDDDDA /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
-		E2611FEF2054CDE800871ADA /* SwiftSoup.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftSoup.xcodeproj; path = SwiftSoup/SwiftSoup.xcodeproj; sourceTree = "<group>"; };
+		E260477120B4F0720075DB03 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		E26E04572072F3BD00EAA7DF /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
 		E290E1142071CC56008BE638 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E2BA857D20B1E5A200A37950 /* SwiftSoup.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftSoup.xcodeproj; path = SwiftSoup/SwiftSoup.xcodeproj; sourceTree = "<group>"; };
+		E2BA859320B1E69000A37950 /* KeychainServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServices.swift; sourceTree = "<group>"; };
+		E2BA859520B21B8700A37950 /* GradebookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradebookViewController.swift; sourceTree = "<group>"; };
+		E2BA85A820B228AE00A37950 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		E2BA85AA20B228C500A37950 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E24DA9A120547F0400CDDDDA /* Alamofire.framework in Frameworks */,
-				E26120082054CE0800871ADA /* SwiftSoup.framework in Frameworks */,
+				E2BA858F20B1E5ED00A37950 /* SwiftSoup.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +212,7 @@
 		E24DA94E20547E3B00CDDDDA = {
 			isa = PBXGroup;
 			children = (
-				E2611FEF2054CDE800871ADA /* SwiftSoup.xcodeproj */,
+				E2BA857D20B1E5A200A37950 /* SwiftSoup.xcodeproj */,
 				E24DA98820547EC500CDDDDA /* Alamofire.xcodeproj */,
 				E24DA95920547E3B00CDDDDA /* renwebb_bkend */,
 				E24DA96E20547E3B00CDDDDA /* renwebb_bkendTests */,
@@ -227,14 +235,13 @@
 			isa = PBXGroup;
 			children = (
 				E24DA95A20547E3B00CDDDDA /* AppDelegate.swift */,
-				E24DA95C20547E3B00CDDDDA /* LoginViewController.swift */,
-				E24DA95E20547E3B00CDDDDA /* Main.storyboard */,
 				E24DA96120547E3B00CDDDDA /* Assets.xcassets */,
-				E24DA96320547E3B00CDDDDA /* LaunchScreen.storyboard */,
 				E24DA96620547E3B00CDDDDA /* Info.plist */,
+				E260476520B4EECC0075DB03 /* UI */,
 				E24DA9A620547FD600CDDDDA /* Login.swift */,
-				E290E1142071CC56008BE638 /* HomeViewController.swift */,
 				E26E04572072F3BD00EAA7DF /* KeychainError.swift */,
+				E2BA859320B1E69000A37950 /* KeychainServices.swift */,
+				E260477120B4F0720075DB03 /* Schedule.swift */,
 			);
 			path = renwebb_bkend;
 			sourceTree = "<group>";
@@ -271,14 +278,27 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E2611FF02054CDE800871ADA /* Products */ = {
+		E260476520B4EECC0075DB03 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				E2611FFF2054CDE900871ADA /* SwiftSoup.framework */,
-				E26120012054CDE900871ADA /* SwiftSoup.framework */,
-				E26120032054CDE900871ADA /* SwiftSoup.framework */,
-				E26120052054CDE900871ADA /* SwiftSoup.framework */,
-				E26120072054CDE900871ADA /* SwiftSoupTests.xctest */,
+				E24DA95E20547E3B00CDDDDA /* Main.storyboard */,
+				E24DA95C20547E3B00CDDDDA /* LoginViewController.swift */,
+				E290E1142071CC56008BE638 /* HomeViewController.swift */,
+				E2BA859520B21B8700A37950 /* GradebookViewController.swift */,
+				E2BA85A820B228AE00A37950 /* ScheduleViewController.swift */,
+				E2BA85AA20B228C500A37950 /* SettingsViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		E2BA857E20B1E5A200A37950 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E2BA858620B1E5A300A37950 /* SwiftSoup.framework */,
+				E2BA858820B1E5A300A37950 /* SwiftSoup.framework */,
+				E2BA858A20B1E5A300A37950 /* SwiftSoup.framework */,
+				E2BA858C20B1E5A300A37950 /* SwiftSoup.framework */,
+				E2BA858E20B1E5A300A37950 /* SwiftSoupTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -299,7 +319,7 @@
 			);
 			dependencies = (
 				E24DA9A420547F0400CDDDDA /* PBXTargetDependency */,
-				E261200B2054CE0800871ADA /* PBXTargetDependency */,
+				E2BA859220B1E5ED00A37950 /* PBXTargetDependency */,
 			);
 			name = renwebb_bkend;
 			productName = renwebb_bkend;
@@ -349,7 +369,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Tiger Wang";
 				TargetAttributes = {
 					E24DA95620547E3B00CDDDDA = {
@@ -385,8 +405,8 @@
 					ProjectRef = E24DA98820547EC500CDDDDA /* Alamofire.xcodeproj */;
 				},
 				{
-					ProductGroup = E2611FF02054CDE800871ADA /* Products */;
-					ProjectRef = E2611FEF2054CDE800871ADA /* SwiftSoup.xcodeproj */;
+					ProductGroup = E2BA857E20B1E5A200A37950 /* Products */;
+					ProjectRef = E2BA857D20B1E5A200A37950 /* SwiftSoup.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -448,39 +468,39 @@
 			remoteRef = E24DA99F20547EC500CDDDDA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E2611FFF2054CDE900871ADA /* SwiftSoup.framework */ = {
+		E2BA858620B1E5A300A37950 /* SwiftSoup.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SwiftSoup.framework;
-			remoteRef = E2611FFE2054CDE900871ADA /* PBXContainerItemProxy */;
+			remoteRef = E2BA858520B1E5A300A37950 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E26120012054CDE900871ADA /* SwiftSoup.framework */ = {
+		E2BA858820B1E5A300A37950 /* SwiftSoup.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SwiftSoup.framework;
-			remoteRef = E26120002054CDE900871ADA /* PBXContainerItemProxy */;
+			remoteRef = E2BA858720B1E5A300A37950 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E26120032054CDE900871ADA /* SwiftSoup.framework */ = {
+		E2BA858A20B1E5A300A37950 /* SwiftSoup.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SwiftSoup.framework;
-			remoteRef = E26120022054CDE900871ADA /* PBXContainerItemProxy */;
+			remoteRef = E2BA858920B1E5A300A37950 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E26120052054CDE900871ADA /* SwiftSoup.framework */ = {
+		E2BA858C20B1E5A300A37950 /* SwiftSoup.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SwiftSoup.framework;
-			remoteRef = E26120042054CDE900871ADA /* PBXContainerItemProxy */;
+			remoteRef = E2BA858B20B1E5A300A37950 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E26120072054CDE900871ADA /* SwiftSoupTests.xctest */ = {
+		E2BA858E20B1E5A300A37950 /* SwiftSoupTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = SwiftSoupTests.xctest;
-			remoteRef = E26120062054CDE900871ADA /* PBXContainerItemProxy */;
+			remoteRef = E2BA858D20B1E5A300A37950 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -490,7 +510,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E24DA96520547E3B00CDDDDA /* LaunchScreen.storyboard in Resources */,
 				E24DA96220547E3B00CDDDDA /* Assets.xcassets in Resources */,
 				E24DA96020547E3B00CDDDDA /* Main.storyboard in Resources */,
 			);
@@ -520,8 +539,13 @@
 				E24DA9A720547FD600CDDDDA /* Login.swift in Sources */,
 				E26E04582072F3BD00EAA7DF /* KeychainError.swift in Sources */,
 				E24DA95D20547E3B00CDDDDA /* LoginViewController.swift in Sources */,
+				E2BA85A920B228AE00A37950 /* ScheduleViewController.swift in Sources */,
+				E2BA859420B1E69000A37950 /* KeychainServices.swift in Sources */,
 				E24DA95B20547E3B00CDDDDA /* AppDelegate.swift in Sources */,
 				E290E1152071CC56008BE638 /* HomeViewController.swift in Sources */,
+				E2BA859620B21B8700A37950 /* GradebookViewController.swift in Sources */,
+				E260477220B4F0720075DB03 /* Schedule.swift in Sources */,
+				E2BA85AB20B228C500A37950 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,10 +583,10 @@
 			name = "Alamofire iOS";
 			targetProxy = E24DA9A320547F0400CDDDDA /* PBXContainerItemProxy */;
 		};
-		E261200B2054CE0800871ADA /* PBXTargetDependency */ = {
+		E2BA859220B1E5ED00A37950 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "SwiftSoup-iOS";
-			targetProxy = E261200A2054CE0800871ADA /* PBXContainerItemProxy */;
+			targetProxy = E2BA859120B1E5ED00A37950 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -573,14 +597,6 @@
 				E24DA95F20547E3B00CDDDDA /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E24DA96320547E3B00CDDDDA /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E24DA96420547E3B00CDDDDA /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -600,6 +616,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -607,6 +624,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -634,7 +652,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -657,6 +675,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -664,6 +683,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -685,7 +705,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
