@@ -237,12 +237,11 @@
 				E24DA95A20547E3B00CDDDDA /* AppDelegate.swift */,
 				E24DA96120547E3B00CDDDDA /* Assets.xcassets */,
 				E24DA96620547E3B00CDDDDA /* Info.plist */,
-				E260476520B4EECC0075DB03 /* UI */,
+				E260476520B4EECC0075DB03 /* ui */,
+				E2ACF41F20BC66C800DAB82B /* schedule */,
 				E24DA9A620547FD600CDDDDA /* Login.swift */,
 				E26E04572072F3BD00EAA7DF /* KeychainError.swift */,
 				E2BA859320B1E69000A37950 /* KeychainServices.swift */,
-				E260477120B4F0720075DB03 /* Schedule.swift */,
-				E2A59FD220B8FD5900F2E6B4 /* Class.swift */,
 			);
 			path = renwebb_bkend;
 			sourceTree = "<group>";
@@ -279,7 +278,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E260476520B4EECC0075DB03 /* UI */ = {
+		E260476520B4EECC0075DB03 /* ui */ = {
 			isa = PBXGroup;
 			children = (
 				E24DA95E20547E3B00CDDDDA /* Main.storyboard */,
@@ -288,7 +287,16 @@
 				E2BA85A820B228AE00A37950 /* ScheduleViewController.swift */,
 				E2BA85AA20B228C500A37950 /* SettingsViewController.swift */,
 			);
-			path = UI;
+			path = ui;
+			sourceTree = "<group>";
+		};
+		E2ACF41F20BC66C800DAB82B /* schedule */ = {
+			isa = PBXGroup;
+			children = (
+				E260477120B4F0720075DB03 /* Schedule.swift */,
+				E2A59FD220B8FD5900F2E6B4 /* Class.swift */,
+			);
+			path = schedule;
 			sourceTree = "<group>";
 		};
 		E2BA857E20B1E5A200A37950 /* Products */ = {

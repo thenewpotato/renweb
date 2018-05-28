@@ -18,12 +18,16 @@ class Login {
     static var gradeURLs = [String]()
     static var studentID = String()
     
-    static func constructHWURL(date: String) -> String {
-        return ""
+    static func constructHWURL(weekOf: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        return "https://tws-tn.client.renweb.com/pw/student/homework-print.cfm?studentid=" + studentID + "&weekof=" + formatter.string(from: weekOf) + "&events=0"
     }
     
-    static func constructCWURL(date: String) -> String {
-        return ""
+    static func constructCWURL(weekOf: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        return "https://tws-tn.client.renweb.com/pw/student/lesson-plans-print.cfm?studentid=" + studentID + "&weekof=" + formatter.string(from: weekOf) + "&events=0"
     }
     
     static func initializeRenweb(username: String, password: String, completion: @escaping (Bool) -> ()) {
@@ -90,6 +94,7 @@ class Login {
                                 let doc: Document = try SwiftSoup.parse(response.result.value!)
                                 let forms: Elements = try doc.select("form")
                                 if (forms.array().count > 1) {
+                                    gradeURLs.removeAll()
                                     for i in 1...(forms.array().count - 1) {
                                         let fields: Elements = try forms.get(i).select("input")
                                         try gradeURLs.append("https://tws-tn.client.renweb.com/renweb/reports/parentsweb/parentsweb_reports.cfm?"
