@@ -12,7 +12,13 @@ class ScheduleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("Loaded ScheduleViewController")
+        let schedule = Schedule(url: Login.scheduleURL, date: Date())
+        schedule.getDay(completion: { (classes) -> (Void) in
+            for classEntry in classes {
+                print(classEntry.name)
+            }
+        })
         // Do any additional setup after loading the view.
     }
 

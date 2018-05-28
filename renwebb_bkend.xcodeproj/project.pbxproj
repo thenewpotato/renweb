@@ -18,7 +18,7 @@
 		E24DA9A720547FD600CDDDDA /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24DA9A620547FD600CDDDDA /* Login.swift */; };
 		E260477220B4F0720075DB03 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260477120B4F0720075DB03 /* Schedule.swift */; };
 		E26E04582072F3BD00EAA7DF /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26E04572072F3BD00EAA7DF /* KeychainError.swift */; };
-		E290E1152071CC56008BE638 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E290E1142071CC56008BE638 /* HomeViewController.swift */; };
+		E2A59FD320B8FD5900F2E6B4 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59FD220B8FD5900F2E6B4 /* Class.swift */; };
 		E2BA858F20B1E5ED00A37950 /* SwiftSoup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2BA858620B1E5A300A37950 /* SwiftSoup.framework */; };
 		E2BA859020B1E5ED00A37950 /* SwiftSoup.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E2BA858620B1E5A300A37950 /* SwiftSoup.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E2BA859420B1E69000A37950 /* KeychainServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BA859320B1E69000A37950 /* KeychainServices.swift */; };
@@ -174,7 +174,7 @@
 		E24DA9A620547FD600CDDDDA /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		E260477120B4F0720075DB03 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		E26E04572072F3BD00EAA7DF /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
-		E290E1142071CC56008BE638 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E2A59FD220B8FD5900F2E6B4 /* Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
 		E2BA857D20B1E5A200A37950 /* SwiftSoup.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftSoup.xcodeproj; path = SwiftSoup/SwiftSoup.xcodeproj; sourceTree = "<group>"; };
 		E2BA859320B1E69000A37950 /* KeychainServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServices.swift; sourceTree = "<group>"; };
 		E2BA859520B21B8700A37950 /* GradebookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradebookViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +242,7 @@
 				E26E04572072F3BD00EAA7DF /* KeychainError.swift */,
 				E2BA859320B1E69000A37950 /* KeychainServices.swift */,
 				E260477120B4F0720075DB03 /* Schedule.swift */,
+				E2A59FD220B8FD5900F2E6B4 /* Class.swift */,
 			);
 			path = renwebb_bkend;
 			sourceTree = "<group>";
@@ -283,7 +284,6 @@
 			children = (
 				E24DA95E20547E3B00CDDDDA /* Main.storyboard */,
 				E24DA95C20547E3B00CDDDDA /* LoginViewController.swift */,
-				E290E1142071CC56008BE638 /* HomeViewController.swift */,
 				E2BA859520B21B8700A37950 /* GradebookViewController.swift */,
 				E2BA85A820B228AE00A37950 /* ScheduleViewController.swift */,
 				E2BA85AA20B228C500A37950 /* SettingsViewController.swift */,
@@ -542,9 +542,9 @@
 				E2BA85A920B228AE00A37950 /* ScheduleViewController.swift in Sources */,
 				E2BA859420B1E69000A37950 /* KeychainServices.swift in Sources */,
 				E24DA95B20547E3B00CDDDDA /* AppDelegate.swift in Sources */,
-				E290E1152071CC56008BE638 /* HomeViewController.swift in Sources */,
 				E2BA859620B21B8700A37950 /* GradebookViewController.swift in Sources */,
 				E260477220B4F0720075DB03 /* Schedule.swift in Sources */,
+				E2A59FD320B8FD5900F2E6B4 /* Class.swift in Sources */,
 				E2BA85AB20B228C500A37950 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

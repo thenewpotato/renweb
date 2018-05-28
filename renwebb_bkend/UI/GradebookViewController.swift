@@ -12,7 +12,7 @@ class GradebookViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("Loaded GradebookViewController");
         // Do any additional setup after loading the view.
     }
 
