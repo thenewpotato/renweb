@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Class {
+class ClassSchedule {
     
     public var name: String
     public var time: String

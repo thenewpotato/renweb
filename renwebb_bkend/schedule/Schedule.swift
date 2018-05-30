@@ -20,7 +20,7 @@ class Schedule {
     var HWDoc: Document?
     var CWDoc: Document?
     var classCodeToName: [String: String]
-    private var classes: [Class]
+    private var classes: [ClassSchedule]
     
     init(scheduleUrl: String) {
         self.scheduleUrl = scheduleUrl
@@ -28,7 +28,7 @@ class Schedule {
         classCodeToName = [:]
     }
     
-    func getDay(date: Date, completion: @escaping ([Class]) -> ()) {
+    func getDay(date: Date, completion: @escaping ([ClassSchedule]) -> ()) {
         HWUrl = Login.constructHWURL(weekOf: date)
         CWUrl = Login.constructCWURL(weekOf: date)
         // default Monday is 2, Monday needs to be 1, etc
@@ -103,7 +103,29 @@ class Schedule {
         Alamofire.request(scheduleUrl).responseString { response in
             do {
                 self.scheduleDoc = try SwiftSoup.parse(response.result.value!)
-                completion(true)
+                //print(self.scheduleDoc)
+                if try self.scheduleDoc?.select("body > table").first() != nil {
+                    completion(true)
+                } else {
+                    print("Schedule Session timed out... retrying login")
+                    Login.attemptKeychainLogin(completion: { success in
+                        if success {
+                            self.scheduleUrl = Login.scheduleURL
+                            Alamofire.request(self.scheduleUrl).responseString { response in
+                                do {
+                                    self.scheduleDoc = try SwiftSoup.parse(response.result.value!)
+                                    print("Re-logged in! returning Document")
+                                    completion(true)
+                                } catch {
+                                    print("Error constructing Schedule Document")
+                                }
+                            }
+                        } else {
+                            print("Failed to re-log in... redirecting to login page")
+                        }
+                    })
+                }
+                
             } catch {
                 print("Error constructing schedule Document")
             }
@@ -200,7 +222,7 @@ class Schedule {
                     let classTime: String = try trs.get(classTimeIndex).select("td").get(weekday).text()
                     let classLoc: String = try trs.get(classLocIndex).select("td").get(weekday).text()
                     if className != nil && classTime != "" && classLoc != "" {
-                        let newClass: Class = Class()
+                        let newClass: ClassSchedule = ClassSchedule()
                         newClass.name = className!
                         newClass.time = classTime
                         newClass.loc = classLoc

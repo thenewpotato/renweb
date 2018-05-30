@@ -13,6 +13,29 @@ class GradebookViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Loaded GradebookViewController");
+        let gradebook = Gradebook(gradebookUrls: ["http://focused-agnesi-78c2b4.bitballoon.com/", "http://musing-swirles-49f0d8.bitballoon.com/", "http://confident-sinoussi-b711b8.bitballoon.com/", "http://reverent-mcnulty-b4dc9e.bitballoon.com/"])
+        gradebook.getGrades(completion: { gradeEntries in
+            if gradeEntries != nil {
+                for gradeEntry in gradeEntries! {
+                    print(gradeEntry.className + "\n")
+                    print(gradeEntry.termGrade)
+                    print(gradeEntry.termLetter)
+                    for category in gradeEntry.categories {
+                        print(category.name)
+                        print(category.weight)
+                        for assignment in category.assignments {
+                            print(assignment.name)
+                            print(assignment.points)
+                            print(assignment.max)
+                            print(assignment.average)
+                            print(assignment.date)
+                            print(assignment.status)
+                        }
+                    }
+                    print("\n")
+                }
+            }
+        })
         // Do any additional setup after loading the view.
     }
 

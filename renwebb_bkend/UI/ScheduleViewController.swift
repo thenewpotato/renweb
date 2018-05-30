@@ -9,16 +9,13 @@
 import UIKit
 
 class ScheduleViewController: UIViewController {
+    
+    var schedule: Schedule?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Loaded ScheduleViewController")
-        let schedule = Schedule(url: Login.scheduleURL, date: Date())
-        schedule.getDay(completion: { (classes) -> (Void) in
-            for classEntry in classes {
-                print(classEntry.name)
-            }
-        })
+        schedule = Schedule(scheduleUrl: Login.scheduleURL)
         // Do any additional setup after loading the view.
     }
 
@@ -27,6 +24,21 @@ class ScheduleViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func viewTapped(_ sender: UIButton) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        schedule!.getDay(date: formatter.date(from: "2018-02-13")!, completion: { classes in
+            for classEntry in classes {
+                print("m " + classEntry.name)
+                print("m " + classEntry.time)
+                print("m " + classEntry.loc)
+                print("m " + classEntry.HW)
+                print("m " + classEntry.CW)
+                print("\n")
+            }
+        })
+    }
 
     /*
     // MARK: - Navigation

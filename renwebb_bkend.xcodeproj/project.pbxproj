@@ -18,13 +18,18 @@
 		E24DA9A720547FD600CDDDDA /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24DA9A620547FD600CDDDDA /* Login.swift */; };
 		E260477220B4F0720075DB03 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260477120B4F0720075DB03 /* Schedule.swift */; };
 		E26E04582072F3BD00EAA7DF /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26E04572072F3BD00EAA7DF /* KeychainError.swift */; };
-		E2A59FD320B8FD5900F2E6B4 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59FD220B8FD5900F2E6B4 /* Class.swift */; };
+		E2A59FD320B8FD5900F2E6B4 /* ClassSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59FD220B8FD5900F2E6B4 /* ClassSchedule.swift */; };
 		E2BA858F20B1E5ED00A37950 /* SwiftSoup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2BA858620B1E5A300A37950 /* SwiftSoup.framework */; };
 		E2BA859020B1E5ED00A37950 /* SwiftSoup.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E2BA858620B1E5A300A37950 /* SwiftSoup.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E2BA859420B1E69000A37950 /* KeychainServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BA859320B1E69000A37950 /* KeychainServices.swift */; };
 		E2BA859620B21B8700A37950 /* GradebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BA859520B21B8700A37950 /* GradebookViewController.swift */; };
 		E2BA85A920B228AE00A37950 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BA85A820B228AE00A37950 /* ScheduleViewController.swift */; };
 		E2BA85AB20B228C500A37950 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BA85AA20B228C500A37950 /* SettingsViewController.swift */; };
+		E2F00CF820BDEF27005E9D62 /* Gradebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F00CF720BDEF27005E9D62 /* Gradebook.swift */; };
+		E2F00D0520BDF017005E9D62 /* ClassGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F00D0420BDF017005E9D62 /* ClassGrade.swift */; };
+		E2F00D0720BDF080005E9D62 /* GradeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F00D0620BDF080005E9D62 /* GradeCategory.swift */; };
+		E2F00D0920BDF08E005E9D62 /* GradeAssignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F00D0820BDF08E005E9D62 /* GradeAssignment.swift */; };
+		E2F00D0B20BDF19D005E9D62 /* AssignmentStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F00D0A20BDF19D005E9D62 /* AssignmentStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,12 +179,17 @@
 		E24DA9A620547FD600CDDDDA /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		E260477120B4F0720075DB03 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		E26E04572072F3BD00EAA7DF /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
-		E2A59FD220B8FD5900F2E6B4 /* Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
+		E2A59FD220B8FD5900F2E6B4 /* ClassSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassSchedule.swift; sourceTree = "<group>"; };
 		E2BA857D20B1E5A200A37950 /* SwiftSoup.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftSoup.xcodeproj; path = SwiftSoup/SwiftSoup.xcodeproj; sourceTree = "<group>"; };
 		E2BA859320B1E69000A37950 /* KeychainServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServices.swift; sourceTree = "<group>"; };
 		E2BA859520B21B8700A37950 /* GradebookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradebookViewController.swift; sourceTree = "<group>"; };
 		E2BA85A820B228AE00A37950 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		E2BA85AA20B228C500A37950 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E2F00CF720BDEF27005E9D62 /* Gradebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradebook.swift; sourceTree = "<group>"; };
+		E2F00D0420BDF017005E9D62 /* ClassGrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassGrade.swift; sourceTree = "<group>"; };
+		E2F00D0620BDF080005E9D62 /* GradeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeCategory.swift; sourceTree = "<group>"; };
+		E2F00D0820BDF08E005E9D62 /* GradeAssignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeAssignment.swift; sourceTree = "<group>"; };
+		E2F00D0A20BDF19D005E9D62 /* AssignmentStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +219,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E239DE7120BF03C6002AD3A4 /* gradeboook */ = {
+			isa = PBXGroup;
+			children = (
+				E2F00CF720BDEF27005E9D62 /* Gradebook.swift */,
+				E2F00D0420BDF017005E9D62 /* ClassGrade.swift */,
+				E2F00D0620BDF080005E9D62 /* GradeCategory.swift */,
+				E2F00D0820BDF08E005E9D62 /* GradeAssignment.swift */,
+				E2F00D0A20BDF19D005E9D62 /* AssignmentStatus.swift */,
+			);
+			path = gradeboook;
+			sourceTree = "<group>";
+		};
 		E24DA94E20547E3B00CDDDDA = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +261,7 @@
 				E24DA96620547E3B00CDDDDA /* Info.plist */,
 				E260476520B4EECC0075DB03 /* ui */,
 				E2ACF41F20BC66C800DAB82B /* schedule */,
+				E239DE7120BF03C6002AD3A4 /* gradeboook */,
 				E24DA9A620547FD600CDDDDA /* Login.swift */,
 				E26E04572072F3BD00EAA7DF /* KeychainError.swift */,
 				E2BA859320B1E69000A37950 /* KeychainServices.swift */,
@@ -294,7 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				E260477120B4F0720075DB03 /* Schedule.swift */,
-				E2A59FD220B8FD5900F2E6B4 /* Class.swift */,
+				E2A59FD220B8FD5900F2E6B4 /* ClassSchedule.swift */,
 			);
 			path = schedule;
 			sourceTree = "<group>";
@@ -544,15 +567,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2F00D0720BDF080005E9D62 /* GradeCategory.swift in Sources */,
 				E24DA9A720547FD600CDDDDA /* Login.swift in Sources */,
 				E26E04582072F3BD00EAA7DF /* KeychainError.swift in Sources */,
 				E24DA95D20547E3B00CDDDDA /* LoginViewController.swift in Sources */,
 				E2BA85A920B228AE00A37950 /* ScheduleViewController.swift in Sources */,
 				E2BA859420B1E69000A37950 /* KeychainServices.swift in Sources */,
 				E24DA95B20547E3B00CDDDDA /* AppDelegate.swift in Sources */,
+				E2F00CF820BDEF27005E9D62 /* Gradebook.swift in Sources */,
 				E2BA859620B21B8700A37950 /* GradebookViewController.swift in Sources */,
+				E2F00D0520BDF017005E9D62 /* ClassGrade.swift in Sources */,
 				E260477220B4F0720075DB03 /* Schedule.swift in Sources */,
-				E2A59FD320B8FD5900F2E6B4 /* Class.swift in Sources */,
+				E2A59FD320B8FD5900F2E6B4 /* ClassSchedule.swift in Sources */,
+				E2F00D0B20BDF19D005E9D62 /* AssignmentStatus.swift in Sources */,
+				E2F00D0920BDF08E005E9D62 /* GradeAssignment.swift in Sources */,
 				E2BA85AB20B228C500A37950 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
