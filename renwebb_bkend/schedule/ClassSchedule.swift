@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ClassSchedule {
     
@@ -15,6 +16,7 @@ class ClassSchedule {
     public var loc: String
     public var HW: String
     public var CW: String
+    public var color: CGColor?
     
     init() {
         name = ""

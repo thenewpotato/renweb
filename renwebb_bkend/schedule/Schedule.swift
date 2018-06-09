@@ -9,6 +9,7 @@
 import Foundation
 import SwiftSoup
 import Alamofire
+import GameKit
 
 class Schedule {
     
@@ -21,6 +22,7 @@ class Schedule {
     var CWDoc: Document?
     var classCodeToName: [String: String]
     private var classes: [ClassSchedule]
+    private let colors = [UIColor.blue.cgColor, UIColor.purple.cgColor, UIColor.brown.cgColor, UIColor.red.cgColor, UIColor(red: 80.0 / 255.0, green: 160.0 / 255.0, blue: 78.0 / 255.0, alpha: 1.0).cgColor, UIColor.orange.cgColor]
     
     init(scheduleUrl: String) {
         self.scheduleUrl = scheduleUrl
@@ -136,6 +138,7 @@ class Schedule {
         Alamofire.request(HWUrl!).responseString { response in
             do {
                 self.HWDoc = try SwiftSoup.parse(response.result.value!)
+                print(self.HWDoc)
                 if try self.HWDoc?.select("body > div").first()?.attr("id") == "main_content" {
                     completion(true)
                 } else {
@@ -193,7 +196,7 @@ class Schedule {
     }
     
     private func parseClassCodeDictionary() {
-        print(scheduleDoc)
+        //print(scheduleDoc)
         if scheduleDoc != nil {
             do {
                 let trs: Elements = try scheduleDoc!.select("body > table:nth-child(2) > tbody > tr")
@@ -226,6 +229,11 @@ class Schedule {
                         newClass.name = className!
                         newClass.time = classTime
                         newClass.loc = classLoc
+                        
+                        let randomColorSource = GKARC4RandomSource(seed: classCode.data(using: .utf8)!)
+                        let randomColorDistribution = GKRandomDistribution(randomSource: randomColorSource, lowestValue: 0, highestValue: 5)
+                        newClass.color = colors[randomColorDistribution.nextInt()]
+                        
                         classes.append(newClass)
                     }
                 }

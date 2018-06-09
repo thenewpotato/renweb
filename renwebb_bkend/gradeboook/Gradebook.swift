@@ -20,14 +20,14 @@ class Gradebook {
     init(gradebookUrls: [String]) {
         self.gradebookUrls = gradebookUrls
         gradebookDocs = []
-        urlCount = 0
+        urlCount = -1
         classes = []
     }
     
     func getGrades(completion: @escaping ([ClassGrade]?) -> ()) {
         gradebookDocs.removeAll()
         classes?.removeAll()
-        urlCount = 0
+        urlCount = -1
         getDoc(completion: { done in
             if done {
                 self.parseDocs()
@@ -37,6 +37,7 @@ class Gradebook {
     }
     
     private func getDoc(completion: @escaping (Bool) -> ()) {
+        self.urlCount += 1
         print(gradebookUrls[urlCount])
         Alamofire.request(gradebookUrls[urlCount]).responseString { response in
             do {
@@ -57,7 +58,6 @@ class Gradebook {
                                     if self.urlCount == self.gradebookUrls.count - 1 {
                                         completion(true)
                                     } else {
-                                        self.urlCount += 1
                                         self.getDoc(completion: { done in
                                             if done {
                                                 completion(true)
@@ -78,7 +78,6 @@ class Gradebook {
                     if self.urlCount == self.gradebookUrls.count - 1 {
                         completion(true)
                     } else {
-                        self.urlCount += 1
                         self.getDoc(completion: { done in
                             if done {
                                 completion(true)
@@ -88,12 +87,15 @@ class Gradebook {
                 // case that Document is empty
                 } else {
                     print("Doc empty")
-                    self.urlCount += 1
-                    self.getDoc(completion: { done in
-                        if done {
-                            completion(true)
-                        }
-                    })
+                    if self.urlCount == self.gradebookUrls.count - 1 {
+                        completion(true)
+                    } else {
+                        self.getDoc(completion: { done in
+                            if done {
+                                completion(true)
+                            }
+                        })
+                    }
                 }
             } catch {
                 print("Error parsing Doc #" + String(self.urlCount))

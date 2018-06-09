@@ -9,11 +9,21 @@
 import UIKit
 
 class GradebookViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Loaded GradebookViewController");
-        let gradebook = Gradebook(gradebookUrls: ["http://focused-agnesi-78c2b4.bitballoon.com/", "http://musing-swirles-49f0d8.bitballoon.com/", "http://confident-sinoussi-b711b8.bitballoon.com/", "http://reverent-mcnulty-b4dc9e.bitballoon.com/"])
+        
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func buttonOnClick(_ sender: UIButton) {
+        let gradebook = Gradebook(gradebookUrls: ["http://confident-liskov-306c03.bitballoon.com/", "http://musing-payne-5fe142.bitballoon.com/", "http://naughty-jones-1c6e25.bitballoon.com/", "http://romantic-clarke-0497a3.bitballoon.com/"])
         gradebook.getGrades(completion: { gradeEntries in
             if gradeEntries != nil {
                 for gradeEntry in gradeEntries! {
@@ -23,6 +33,7 @@ class GradebookViewController: UIViewController {
                     for category in gradeEntry.categories {
                         print(category.name)
                         print(category.weight)
+                        print(category.categoryAverage)
                         for assignment in category.assignments {
                             print(assignment.name)
                             print(assignment.points)
@@ -36,15 +47,8 @@ class GradebookViewController: UIViewController {
                 }
             }
         })
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 

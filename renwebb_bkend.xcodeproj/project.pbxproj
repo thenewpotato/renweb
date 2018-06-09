@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2324B9420C988DF007D2D8F /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2324B9320C988DF007D2D8F /* ScheduleTableViewController.swift */; };
+		E2324BA120C988F4007D2D8F /* GradebookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2324BA020C988F4007D2D8F /* GradebookTableViewController.swift */; };
+		E2324BA520C9B4D7007D2D8F /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2324BA420C9B4D7007D2D8F /* ScheduleTableViewCell.swift */; };
 		E24DA95B20547E3B00CDDDDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24DA95A20547E3B00CDDDDA /* AppDelegate.swift */; };
 		E24DA95D20547E3B00CDDDDA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24DA95C20547E3B00CDDDDA /* LoginViewController.swift */; };
 		E24DA96020547E3B00CDDDDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E24DA95E20547E3B00CDDDDA /* Main.storyboard */; };
@@ -16,6 +19,7 @@
 		E24DA9A120547F0400CDDDDA /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E24DA99420547EC500CDDDDA /* Alamofire.framework */; };
 		E24DA9A220547F0400CDDDDA /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E24DA99420547EC500CDDDDA /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E24DA9A720547FD600CDDDDA /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24DA9A620547FD600CDDDDA /* Login.swift */; };
+		E25DCA3720CC7DD30037B2B3 /* ClassColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DCA3620CC7DD30037B2B3 /* ClassColorPicker.swift */; };
 		E260477220B4F0720075DB03 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260477120B4F0720075DB03 /* Schedule.swift */; };
 		E26E04582072F3BD00EAA7DF /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26E04572072F3BD00EAA7DF /* KeychainError.swift */; };
 		E2A59FD320B8FD5900F2E6B4 /* ClassSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59FD220B8FD5900F2E6B4 /* ClassSchedule.swift */; };
@@ -23,7 +27,6 @@
 		E2BA859020B1E5ED00A37950 /* SwiftSoup.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E2BA858620B1E5A300A37950 /* SwiftSoup.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E2BA859420B1E69000A37950 /* KeychainServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BA859320B1E69000A37950 /* KeychainServices.swift */; };
 		E2BA859620B21B8700A37950 /* GradebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BA859520B21B8700A37950 /* GradebookViewController.swift */; };
-		E2BA85A920B228AE00A37950 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BA85A820B228AE00A37950 /* ScheduleViewController.swift */; };
 		E2BA85AB20B228C500A37950 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BA85AA20B228C500A37950 /* SettingsViewController.swift */; };
 		E2F00CF820BDEF27005E9D62 /* Gradebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F00CF720BDEF27005E9D62 /* Gradebook.swift */; };
 		E2F00D0520BDF017005E9D62 /* ClassGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F00D0420BDF017005E9D62 /* ClassGrade.swift */; };
@@ -163,6 +166,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E2324B9320C988DF007D2D8F /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
+		E2324BA020C988F4007D2D8F /* GradebookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradebookTableViewController.swift; sourceTree = "<group>"; };
+		E2324BA420C9B4D7007D2D8F /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		E24DA95720547E3B00CDDDDA /* renwebb_bkend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = renwebb_bkend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E24DA95A20547E3B00CDDDDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E24DA95C20547E3B00CDDDDA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -177,13 +183,13 @@
 		E24DA97C20547E3B00CDDDDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E24DA98820547EC500CDDDDA /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		E24DA9A620547FD600CDDDDA /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		E25DCA3620CC7DD30037B2B3 /* ClassColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassColorPicker.swift; sourceTree = "<group>"; };
 		E260477120B4F0720075DB03 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		E26E04572072F3BD00EAA7DF /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
 		E2A59FD220B8FD5900F2E6B4 /* ClassSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassSchedule.swift; sourceTree = "<group>"; };
 		E2BA857D20B1E5A200A37950 /* SwiftSoup.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftSoup.xcodeproj; path = SwiftSoup/SwiftSoup.xcodeproj; sourceTree = "<group>"; };
 		E2BA859320B1E69000A37950 /* KeychainServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServices.swift; sourceTree = "<group>"; };
 		E2BA859520B21B8700A37950 /* GradebookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradebookViewController.swift; sourceTree = "<group>"; };
-		E2BA85A820B228AE00A37950 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		E2BA85AA20B228C500A37950 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E2F00CF720BDEF27005E9D62 /* Gradebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradebook.swift; sourceTree = "<group>"; };
 		E2F00D0420BDF017005E9D62 /* ClassGrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassGrade.swift; sourceTree = "<group>"; };
@@ -307,8 +313,10 @@
 				E24DA95E20547E3B00CDDDDA /* Main.storyboard */,
 				E24DA95C20547E3B00CDDDDA /* LoginViewController.swift */,
 				E2BA859520B21B8700A37950 /* GradebookViewController.swift */,
-				E2BA85A820B228AE00A37950 /* ScheduleViewController.swift */,
 				E2BA85AA20B228C500A37950 /* SettingsViewController.swift */,
+				E2324B9320C988DF007D2D8F /* ScheduleTableViewController.swift */,
+				E2324BA020C988F4007D2D8F /* GradebookTableViewController.swift */,
+				E2324BA420C9B4D7007D2D8F /* ScheduleTableViewCell.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -318,6 +326,7 @@
 			children = (
 				E260477120B4F0720075DB03 /* Schedule.swift */,
 				E2A59FD220B8FD5900F2E6B4 /* ClassSchedule.swift */,
+				E25DCA3620CC7DD30037B2B3 /* ClassColorPicker.swift */,
 			);
 			path = schedule;
 			sourceTree = "<group>";
@@ -567,16 +576,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2324B9420C988DF007D2D8F /* ScheduleTableViewController.swift in Sources */,
 				E2F00D0720BDF080005E9D62 /* GradeCategory.swift in Sources */,
+				E2324BA120C988F4007D2D8F /* GradebookTableViewController.swift in Sources */,
 				E24DA9A720547FD600CDDDDA /* Login.swift in Sources */,
 				E26E04582072F3BD00EAA7DF /* KeychainError.swift in Sources */,
 				E24DA95D20547E3B00CDDDDA /* LoginViewController.swift in Sources */,
-				E2BA85A920B228AE00A37950 /* ScheduleViewController.swift in Sources */,
 				E2BA859420B1E69000A37950 /* KeychainServices.swift in Sources */,
+				E2324BA520C9B4D7007D2D8F /* ScheduleTableViewCell.swift in Sources */,
 				E24DA95B20547E3B00CDDDDA /* AppDelegate.swift in Sources */,
 				E2F00CF820BDEF27005E9D62 /* Gradebook.swift in Sources */,
 				E2BA859620B21B8700A37950 /* GradebookViewController.swift in Sources */,
 				E2F00D0520BDF017005E9D62 /* ClassGrade.swift in Sources */,
+				E25DCA3720CC7DD30037B2B3 /* ClassColorPicker.swift in Sources */,
 				E260477220B4F0720075DB03 /* Schedule.swift in Sources */,
 				E2A59FD320B8FD5900F2E6B4 /* ClassSchedule.swift in Sources */,
 				E2F00D0B20BDF19D005E9D62 /* AssignmentStatus.swift in Sources */,

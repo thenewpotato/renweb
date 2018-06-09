@@ -75,7 +75,11 @@ class Login {
                             let doc: Document = try SwiftSoup.parse(response.result.value!)
                             let graybutton: Element? = try doc.select(".graybutton.printout").first()
                             if (graybutton == nil) {
-                                completion(false)
+                                // TODO: temporary adjustment: scheduleURL and studentID manually set ,completion from false to true: schedule shutdown
+                                scheduleURL = "https://tws-tn.client.renweb.com/pw/NAScopy/schedules/StudentSchedule-Grid.cfm?District=TWS-TN&School=TWS-TN&StudentID=1211639&YearID=262&TermID=4&Page=1&End=1&prompt0=TWS-TN&prompt1=TWS-TN&prompt2=262&prompt3=4&templateid=0&ReportHash=25C3AA6A8D9980067991DEE5980EF7D8&hashval=25C3AA6A8D9980067991DEE5980EF7D8"
+                                studentID = "1211639"
+                                completion(true)
+                                
                                 return
                             }
                             scheduleURL = try "https://tws-tn.client.renweb.com" + graybutton!.attr("href")
