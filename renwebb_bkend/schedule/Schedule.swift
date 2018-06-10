@@ -21,13 +21,14 @@ class Schedule {
     var HWDoc: Document?
     var CWDoc: Document?
     var classCodeToName: [String: String]
+    private var classColorPicker: ClassColorPicker
     private var classes: [ClassSchedule]
-    private let colors = [UIColor.blue.cgColor, UIColor.purple.cgColor, UIColor.brown.cgColor, UIColor.red.cgColor, UIColor(red: 80.0 / 255.0, green: 160.0 / 255.0, blue: 78.0 / 255.0, alpha: 1.0).cgColor, UIColor.orange.cgColor]
     
     init(scheduleUrl: String) {
         self.scheduleUrl = scheduleUrl
         classes = []
         classCodeToName = [:]
+        classColorPicker = ClassColorPicker()
     }
     
     func getDay(date: Date, completion: @escaping ([ClassSchedule]) -> ()) {
@@ -102,6 +103,7 @@ class Schedule {
     }
     
     private func getScheduleDoc(completion: @escaping (Bool) -> ()) {
+        print("getting schedule")
         Alamofire.request(scheduleUrl).responseString { response in
             do {
                 self.scheduleDoc = try SwiftSoup.parse(response.result.value!)
@@ -135,10 +137,10 @@ class Schedule {
     }
     
     private func getHWDoc(completion: @escaping (Bool) -> ()) {
+        print("getting HW")
         Alamofire.request(HWUrl!).responseString { response in
             do {
                 self.HWDoc = try SwiftSoup.parse(response.result.value!)
-                print(self.HWDoc)
                 if try self.HWDoc?.select("body > div").first()?.attr("id") == "main_content" {
                     completion(true)
                 } else {
@@ -166,6 +168,7 @@ class Schedule {
     }
     
     private func getCWDoc(completion: @escaping (Bool) -> ()) {
+        print("getting CW")
         Alamofire.request(CWUrl!).responseString { response in
             do {
                 self.CWDoc = try SwiftSoup.parse(response.result.value!)
@@ -187,7 +190,7 @@ class Schedule {
                         } else {
                             print("Failed to re-log in... redirecting to login page")
                         }
-                    })
+                    })`
                 }
             } catch {
                 print("Error constructing HW Document")
@@ -203,7 +206,11 @@ class Schedule {
                 // Accounted for blank rows
                 for i in 2...(trs.size() - 2) {
                     let tds = try trs.get(i).select("td")
-                    classCodeToName[try tds.get(1).text()] = try tds.get(0).text()
+                    let classCode = try tds.get(1).text()
+                    classCodeToName[classCode] = try tds.get(0).text()
+                    if classColorPicker.getColor(classCode: classCode) == nil {
+                        classColorPicker.autoSetColor(classCode: classCode)
+                    }
                 }
             } catch {
                 print("Error parsing class code <-> name dictionary")
@@ -229,11 +236,7 @@ class Schedule {
                         newClass.name = className!
                         newClass.time = classTime
                         newClass.loc = classLoc
-                        
-                        let randomColorSource = GKARC4RandomSource(seed: classCode.data(using: .utf8)!)
-                        let randomColorDistribution = GKRandomDistribution(randomSource: randomColorSource, lowestValue: 0, highestValue: 5)
-                        newClass.color = colors[randomColorDistribution.nextInt()]
-                        
+                        newClass.color = self.classColorPicker.getColor(classCode: classCode)!.cgColor
                         classes.append(newClass)
                     }
                 }

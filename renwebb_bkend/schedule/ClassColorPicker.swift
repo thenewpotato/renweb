@@ -11,29 +11,62 @@ import UIKit
 
 class ClassColorPicker {
     
-    let colors = [
-        UIColor.blue.cgColor,
-        UIColor.purple.cgColor,
-        UIColor(red: 204.0 / 255.0, green: 51.0 / 255.0, blue: 153.0 / 255.0, alpha: 1.0).cgColor, // reddish pink
-        UIColor.red.cgColor,
-        UIColor.brown.cgColor,
-        UIColor.orange.cgColor,
-        UIColor(red: 80.0 / 255.0, green: 160.0 / 255.0, blue: 78.0 / 255.0, alpha: 1.0).cgColor, // dark green
-        UIColor.cyan.cgColor]
+    var colors = [
+        UIColor.blue,
+        UIColor.purple,
+        UIColor(red: 204.0 / 255.0, green: 51.0 / 255.0, blue: 153.0 / 255.0, alpha: 1.0), // reddish pink
+        UIColor.red,
+        UIColor.brown,
+        UIColor.orange,
+        UIColor(red: 80.0 / 255.0, green: 160.0 / 255.0, blue: 78.0 / 255.0, alpha: 1.0), // dark green
+        UIColor(red: 0.0 / 255.0, green: 153.0 / 255.0, blue: 153.0 / 255.0, alpha: 1.0), // cyan
+        UIColor(red: 0.0 / 255.0, green: 102.0 / 255.0, blue: 153.0 / 255.0, alpha: 1.0),
+        UIColor(red: 153.0 / 255.0, green: 153.0 / 255.0, blue: 102.0 / 255.0, alpha: 1.0),
+        UIColor(red: 102.0 / 255.0, green: 153.0 / 255.0, blue: 0.0 / 255.0, alpha: 1.0)]
     var defaults: UserDefaults
+    var counter = 0
     
+    // one ClassColorPicker object PER (SCHEDULE), NOT (SCHEDULE CLASS)
     init() {
         defaults = UserDefaults.standard
-        
+        colors.shuffle()
     }
     
-    func getColor(classCode: String) -> CGColor {
-        // it doesn't seem like default.integer has the optional type in case that no values are set... thus using defaults.string then converting to int for now
-        if let colorIndex = defaults.string(forKey: classCode) {
-            return colors[Int(colorIndex)!]
+    func autoSetColor(classCode: String){
+        let color = colors[counter]
+        let encodedColorData = NSKeyedArchiver.archivedData(withRootObject: color)
+        defaults.set(encodedColorData, forKey: classCode)
+        counter += 1
+    }
+    
+    func changeColor(classCode: String, red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
+        let color = UIColor(red: red, green: green, blue: blue, alpha: alpha)
+        let encodedColorData = NSKeyedArchiver.archivedData(withRootObject: color)
+        defaults.set(encodedColorData, forKey: classCode)
+    }
+    
+    func getColor(classCode: String) -> UIColor?{
+        let encodedColorData = defaults.object(forKey: classCode) as? Data
+        if let decodedColor = NSKeyedUnarchiver.unarchiveObject(with: encodedColorData!) as? UIColor {
+            return decodedColor
         } else {
-            defaults.set(<#T##value: Any?##Any?#>, forKey: <#T##String#>)
+            return nil
         }
     }
     
+}
+
+extension MutableCollection {
+    /// Shuffles the contents of this collection.
+    mutating func shuffle() {
+        let c = count
+        guard c > 1 else { return }
+        
+        for (firstUnshuffled, unshuffledCount) in zip(indices, stride(from: c, to: 1, by: -1)) {
+            // Change `Int` in the next line to `IndexDistance` in < Swift 4.1
+            let d: Int = numericCast(arc4random_uniform(numericCast(unshuffledCount)))
+            let i = index(firstUnshuffled, offsetBy: d)
+            swapAt(firstUnshuffled, i)
+        }
+    }
 }
