@@ -152,8 +152,10 @@ class Schedule {
                             Alamofire.request(self.HWUrl!).responseString { response in
                                 do {
                                     self.HWDoc = try SwiftSoup.parse(response.result.value!)
-                                    print("Re-logged in! returning Document")
-                                    completion(true)
+                                    if try self.HWDoc?.select("body > div").first()?.attr("id") == "main_content" {
+                                        print("Re-logged in! returning Document")
+                                        completion(true)
+                                    }
                                 } catch {
                                     print("Error constructing HW Document")
                                 }
@@ -174,7 +176,7 @@ class Schedule {
         Alamofire.request(CWUrl!).responseString { response in
             do {
                 self.CWDoc = try SwiftSoup.parse(response.result.value!)
-                if try self.HWDoc?.select("body > div").first()?.attr("id") == "main_content" {
+                if try self.CWDoc?.select("body > div").first()?.attr("id") == "main_content" {
                     completion(true)
                 } else {
                     print("CW Session timed out... retrying login")
@@ -183,8 +185,10 @@ class Schedule {
                             Alamofire.request(self.CWUrl!).responseString { response in
                                 do {
                                     self.CWDoc = try SwiftSoup.parse(response.result.value!)
-                                    print("Re-logged in! returning Document")
-                                    completion(true)
+                                    if try self.CWDoc?.select("body > div").first()?.attr("id") == "main_content" {
+                                        print("Re-logged in! returning Document")
+                                        completion(true)
+                                    }
                                 } catch {
                                     print("Error constructing HW Document")
                                 }
@@ -252,6 +256,7 @@ class Schedule {
     
     private func parseHW(date: Date) {
         print("Parsing HW...")
+        print(HWDoc)
         if HWDoc != nil {
             let formatter = DateFormatter()
             formatter.dateFormat = "MM/dd/yyyy"

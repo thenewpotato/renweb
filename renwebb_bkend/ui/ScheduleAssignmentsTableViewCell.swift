@@ -28,12 +28,13 @@ class ScheduleAssignmentsTableViewCell: UITableViewCell {
     }
     
     override func layoutSubviews() {
-        let shadowPath = UIBezierPath(rect: cell.ViewContainer.bounds)
-        cell.ViewShadow.layer.masksToBounds = false
-        cell.ViewShadow.layer.shadowOffset = CGSize(width: CGFloat(5.0), height: CGFloat(10.0))
-        cell.ViewShadow.layer.shadowColor = UIColor.black.cgColor
-        cell.ViewShadow.layer.shadowOpacity = 0.1
-        cell.ViewShadow.layer.shadowPath = shadowPath.cgPath
+        // Migrated from ScheduleAssignmentsTableViewController, shadow would misplace to 130 height boundaries in original tableView method. layoutSubviews is called AFTER auto-layout takes palce, thus after reshaping ViewShadow's boundaries
+        let shadowPath = UIBezierPath(rect: ViewShadow.bounds)
+        ViewShadow.layer.masksToBounds = false
+        ViewShadow.layer.shadowOffset = CGSize(width: CGFloat(5.0), height: CGFloat(10.0))
+        ViewShadow.layer.shadowColor = UIColor.black.cgColor
+        ViewShadow.layer.shadowOpacity = 0.1
+        ViewShadow.layer.shadowPath = shadowPath.cgPath
     }
 
 }

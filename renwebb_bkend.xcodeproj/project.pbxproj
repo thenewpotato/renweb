@@ -12,6 +12,7 @@
 		E2324BA520C9B4D7007D2D8F /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2324BA420C9B4D7007D2D8F /* ScheduleTableViewCell.swift */; };
 		E242650320CEBB980006052D /* ScheduleAssignmentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242650220CEBB980006052D /* ScheduleAssignmentsTableViewController.swift */; };
 		E242650520CEC2A50006052D /* ScheduleAssignmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242650420CEC2A50006052D /* ScheduleAssignmentsTableViewCell.swift */; };
+		E242650720CF18F80006052D /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242650620CF18F80006052D /* EmptyViewController.swift */; };
 		E24DA95B20547E3B00CDDDDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24DA95A20547E3B00CDDDDA /* AppDelegate.swift */; };
 		E24DA95D20547E3B00CDDDDA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24DA95C20547E3B00CDDDDA /* LoginViewController.swift */; };
 		E24DA96020547E3B00CDDDDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E24DA95E20547E3B00CDDDDA /* Main.storyboard */; };
@@ -174,6 +175,7 @@
 		E2324BA420C9B4D7007D2D8F /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		E242650220CEBB980006052D /* ScheduleAssignmentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAssignmentsTableViewController.swift; sourceTree = "<group>"; };
 		E242650420CEC2A50006052D /* ScheduleAssignmentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAssignmentsTableViewCell.swift; sourceTree = "<group>"; };
+		E242650620CF18F80006052D /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		E24DA95720547E3B00CDDDDA /* renwebb_bkend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = renwebb_bkend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E24DA95A20547E3B00CDDDDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E24DA95C20547E3B00CDDDDA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				E2BA859520B21B8700A37950 /* GradebookViewController.swift */,
 				E2BA85AA20B228C500A37950 /* SettingsViewController.swift */,
 				E2324BA020C988F4007D2D8F /* GradebookTableViewController.swift */,
+				E242650620CF18F80006052D /* EmptyViewController.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				E2F00D0720BDF080005E9D62 /* GradeCategory.swift in Sources */,
 				E2324BA120C988F4007D2D8F /* GradebookTableViewController.swift in Sources */,
 				E24DA9A720547FD600CDDDDA /* Login.swift in Sources */,
+				E242650720CF18F80006052D /* EmptyViewController.swift in Sources */,
 				E26E04582072F3BD00EAA7DF /* KeychainError.swift in Sources */,
 				E24DA95D20547E3B00CDDDDA /* LoginViewController.swift in Sources */,
 				E2BA859420B1E69000A37950 /* KeychainServices.swift in Sources */,

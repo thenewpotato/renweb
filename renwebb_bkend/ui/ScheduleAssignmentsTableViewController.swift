@@ -73,12 +73,7 @@ class ScheduleAssignmentsTableViewController: UITableViewController {
             cell.labelAssignmentBody.text = classSchedule?.HW
         }
         
-        let shadowPath = UIBezierPath(rect: cell.ViewContainer.bounds)
-        cell.ViewShadow.layer.masksToBounds = false
-        cell.ViewShadow.layer.shadowOffset = CGSize(width: CGFloat(5.0), height: CGFloat(10.0))
-        cell.ViewShadow.layer.shadowColor = UIColor.black.cgColor
-        cell.ViewShadow.layer.shadowOpacity = 0.1
-        cell.ViewShadow.layer.shadowPath = shadowPath.cgPath
+        // Shadow implementation migrated to ScheduleAssignmentsTableViewCell
 
         return cell
     }

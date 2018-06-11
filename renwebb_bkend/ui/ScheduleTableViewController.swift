@@ -109,9 +109,17 @@ class ScheduleTableViewController: UITableViewController {
             cell.ViewShadow.transform = CGAffineTransform.identity
         }, completion: { _ in
             // Presents HW/CW assignments view within the tab bar and the navigation bar
-            let scheduleAssignmentsTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "scheduleAssignmentsTableViewController") as! ScheduleAssignmentsTableViewController
-            scheduleAssignmentsTableViewController.initialize(classSchedule: self.classes[indexPath.row])
-            self.navigationController?.pushViewController(scheduleAssignmentsTableViewController, animated: false)
+            let classToPresent = self.classes[indexPath.row]
+            if (classToPresent.CW != "") || (classToPresent.HW != "") {
+                let scheduleAssignmentsTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "scheduleAssignmentsTableViewController") as! ScheduleAssignmentsTableViewController
+                scheduleAssignmentsTableViewController.initialize(classSchedule: classToPresent)
+                self.navigationController?.pushViewController(scheduleAssignmentsTableViewController, animated: true)
+            } else {
+                let emptyViewController = self.storyboard?.instantiateViewController(withIdentifier: "emptyViewController") as! EmptyViewController
+                self.navigationController?.pushViewController(emptyViewController, animated: true)
+            }
+            
+            
         })
     }
 
