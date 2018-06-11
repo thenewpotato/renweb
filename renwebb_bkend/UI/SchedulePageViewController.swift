@@ -17,7 +17,7 @@ class SchedulePageViewController: UIPageViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        formatterForUi.dateFormat = "MMMM dd"
+        formatterForUi.dateFormat = "EEEE, MMM. dd"
         
         schedule = Schedule(scheduleUrl: Login.scheduleURL)
         
