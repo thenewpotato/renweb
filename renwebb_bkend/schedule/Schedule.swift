@@ -36,6 +36,7 @@ class Schedule {
         CWUrl = Login.constructCWURL(weekOf: date)
         // default Monday is 2, Monday needs to be 1, etc
         let weekday = Calendar.current.component(.weekday, from: date) - 1
+        print("Requesting weekday " + String(weekday))
         
         if scheduleDoc == nil && HWDoc == nil && CWDoc == nil {
             docDate = date
@@ -51,6 +52,7 @@ class Schedule {
                 }
             })
         } else if Calendar.current.component(.weekOfYear, from: date) != Calendar.current.component(.weekOfYear, from: docDate!) {
+            print("Loading another week...")
             docDate = date
             getWeekDependentDocs(completion: { done in
                 if done {
@@ -190,7 +192,7 @@ class Schedule {
                         } else {
                             print("Failed to re-log in... redirecting to login page")
                         }
-                    })`
+                    })
                 }
             } catch {
                 print("Error constructing HW Document")
@@ -219,9 +221,11 @@ class Schedule {
     }
     
     private func parseSchedule(weekday: Int) {
-        if scheduleDoc != nil {
+        // TODO: add boarder weekend schedule support
+        if (scheduleDoc != nil) && (weekday != 0) && (weekday != 6) {
             do {
                 let trs: Elements = try scheduleDoc!.select("#AutoNumber2 > tbody > tr")
+                print("scheduleDoc has " + String(trs.size()) + " trs")
                 // Each class row contains 3 tr elements; i represents the index of the class row, not the tr element
                 for i in 1...((trs.size() - 1) / 3) {
                     let classNameIndex = 3 * i - 2
@@ -247,6 +251,7 @@ class Schedule {
     }
     
     private func parseHW(date: Date) {
+        print("Parsing HW...")
         if HWDoc != nil {
             let formatter = DateFormatter()
             formatter.dateFormat = "MM/dd/yyyy"
@@ -255,8 +260,7 @@ class Schedule {
                 for li in lis {
                     let divs = try li.select("div")
                     let dateDiv = try divs.get(0).text()
-                    if dateDiv.prefix(10) == formatter.string(from: date) {
-                        
+                    if (dateDiv.prefix(10) == formatter.string(from: date)) && (divs.size() > 1) {
                         for i in 1...(divs.size() - 1) {
                             let div = divs.get(i)
                             let strong = try div.select("strong").text()
@@ -281,6 +285,7 @@ class Schedule {
     }
     
     private func parseCW(date: Date) {
+        print("Parsing CW...")
         if CWDoc != nil {
             let formatter = DateFormatter()
             formatter.dateFormat = "MM/dd/yyyy"
@@ -289,8 +294,7 @@ class Schedule {
                 for li in lis {
                     let divs = try li.select("div")
                     let dateDiv = try divs.get(0).text()
-                    if dateDiv.prefix(10) == formatter.string(from: date) {
-                        
+                    if (dateDiv.prefix(10) == formatter.string(from: date)) && (divs.size() > 1) {
                         for i in 1...(divs.size() - 1) {
                             let div = divs.get(i)
                             let strong = try div.select("span").text()
