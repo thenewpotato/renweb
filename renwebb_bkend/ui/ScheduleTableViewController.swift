@@ -59,7 +59,6 @@ class ScheduleTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(classes.count)
         return classes.count
     }
 
@@ -108,6 +107,11 @@ class ScheduleTableViewController: UITableViewController {
         UIView.animate(withDuration: 0.05, animations: {
             cell.ViewContainer.transform = CGAffineTransform.identity
             cell.ViewShadow.transform = CGAffineTransform.identity
+        }, completion: { _ in
+            // Presents HW/CW assignments view within the tab bar and the navigation bar
+            let scheduleAssignmentsTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "scheduleAssignmentsTableViewController") as! ScheduleAssignmentsTableViewController
+            scheduleAssignmentsTableViewController.initialize(classSchedule: self.classes[indexPath.row])
+            self.navigationController?.pushViewController(scheduleAssignmentsTableViewController, animated: false)
         })
     }
 

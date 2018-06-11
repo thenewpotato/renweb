@@ -10,6 +10,8 @@
 		E2324B9420C988DF007D2D8F /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2324B9320C988DF007D2D8F /* ScheduleTableViewController.swift */; };
 		E2324BA120C988F4007D2D8F /* GradebookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2324BA020C988F4007D2D8F /* GradebookTableViewController.swift */; };
 		E2324BA520C9B4D7007D2D8F /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2324BA420C9B4D7007D2D8F /* ScheduleTableViewCell.swift */; };
+		E242650320CEBB980006052D /* ScheduleAssignmentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242650220CEBB980006052D /* ScheduleAssignmentsTableViewController.swift */; };
+		E242650520CEC2A50006052D /* ScheduleAssignmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242650420CEC2A50006052D /* ScheduleAssignmentsTableViewCell.swift */; };
 		E24DA95B20547E3B00CDDDDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24DA95A20547E3B00CDDDDA /* AppDelegate.swift */; };
 		E24DA95D20547E3B00CDDDDA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24DA95C20547E3B00CDDDDA /* LoginViewController.swift */; };
 		E24DA96020547E3B00CDDDDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E24DA95E20547E3B00CDDDDA /* Main.storyboard */; };
@@ -170,6 +172,8 @@
 		E2324B9320C988DF007D2D8F /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		E2324BA020C988F4007D2D8F /* GradebookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradebookTableViewController.swift; sourceTree = "<group>"; };
 		E2324BA420C9B4D7007D2D8F /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		E242650220CEBB980006052D /* ScheduleAssignmentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAssignmentsTableViewController.swift; sourceTree = "<group>"; };
+		E242650420CEC2A50006052D /* ScheduleAssignmentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAssignmentsTableViewCell.swift; sourceTree = "<group>"; };
 		E24DA95720547E3B00CDDDDA /* renwebb_bkend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = renwebb_bkend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E24DA95A20547E3B00CDDDDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E24DA95C20547E3B00CDDDDA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -313,13 +317,15 @@
 			isa = PBXGroup;
 			children = (
 				E24DA95E20547E3B00CDDDDA /* Main.storyboard */,
+				E2B9FDE120CD7B9A00B8620D /* SchedulePageViewController.swift */,
+				E2324B9320C988DF007D2D8F /* ScheduleTableViewController.swift */,
+				E242650220CEBB980006052D /* ScheduleAssignmentsTableViewController.swift */,
+				E2324BA420C9B4D7007D2D8F /* ScheduleTableViewCell.swift */,
+				E242650420CEC2A50006052D /* ScheduleAssignmentsTableViewCell.swift */,
 				E24DA95C20547E3B00CDDDDA /* LoginViewController.swift */,
 				E2BA859520B21B8700A37950 /* GradebookViewController.swift */,
 				E2BA85AA20B228C500A37950 /* SettingsViewController.swift */,
-				E2324B9320C988DF007D2D8F /* ScheduleTableViewController.swift */,
 				E2324BA020C988F4007D2D8F /* GradebookTableViewController.swift */,
-				E2324BA420C9B4D7007D2D8F /* ScheduleTableViewCell.swift */,
-				E2B9FDE120CD7B9A00B8620D /* SchedulePageViewController.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -594,8 +600,10 @@
 				E25DCA3720CC7DD30037B2B3 /* ClassColorPicker.swift in Sources */,
 				E260477220B4F0720075DB03 /* Schedule.swift in Sources */,
 				E2A59FD320B8FD5900F2E6B4 /* ClassSchedule.swift in Sources */,
+				E242650320CEBB980006052D /* ScheduleAssignmentsTableViewController.swift in Sources */,
 				E2F00D0B20BDF19D005E9D62 /* AssignmentStatus.swift in Sources */,
 				E2F00D0920BDF08E005E9D62 /* GradeAssignment.swift in Sources */,
+				E242650520CEC2A50006052D /* ScheduleAssignmentsTableViewCell.swift in Sources */,
 				E2B9FDE220CD7B9A00B8620D /* SchedulePageViewController.swift in Sources */,
 				E2BA85AB20B228C500A37950 /* SettingsViewController.swift in Sources */,
 			);
