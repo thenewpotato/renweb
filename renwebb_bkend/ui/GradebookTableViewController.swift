@@ -9,6 +9,11 @@
 import UIKit
 
 class GradebookTableViewController: UITableViewController {
+    
+    let cellIdentifier = "gradebookTableViewCell"
+    var gradebook: Gradebook?
+    var gradeColorPicker: GradeColorPicker?
+    var grades = [ClassGrade]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +23,15 @@ class GradebookTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        gradebook = Gradebook(gradebookUrls: ["http://adoring-easley-1ecaa1.bitballoon.com/", "http://distracted-lalande-f44be5.bitballoon.com/", "http://sleepy-leavitt-29a880.bitballoon.com/", "http://modest-bohr-6934b5.bitballoon.com/", "http://clever-tereshkova-52ed4e.bitballoon.com/", "http://vibrant-joliot-4e153a.bitballoon.com/"])
+        gradeColorPicker = GradeColorPicker()
+        gradebook!.getGrades(completion: { newGrades in
+            self.grades.append(contentsOf: newGrades!)
+            let indexPaths = (self.grades.count - newGrades!.count ..< self.grades.count)
+                .map { IndexPath(row: $0, section: 0) }
+            self.tableView.insertRows(at: indexPaths, with: .automatic)
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +43,41 @@ class GradebookTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return grades.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        print("making cell...")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? GradebookTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of GradebookTableViewCell.")
+        }
+        let grade = grades[indexPath.row]
 
-        // Configure the cell...
+        // MARK: configure the cell...
+        cell.ViewContainer.layer.cornerRadius = 8
+        cell.ViewContainer.layer.masksToBounds = true
+        cell.ViewContainer.layer.backgroundColor = gradeColorPicker?.getColor(letterGrade: grade.termLetter).cgColor
+        
+        let shadowPath = UIBezierPath(rect: cell.ViewShadow.bounds)
+        cell.ViewShadow.layer.masksToBounds = false
+        cell.ViewShadow.layer.shadowOffset = CGSize(width: CGFloat(5.0), height: CGFloat(10.0))
+        cell.ViewShadow.layer.shadowColor = UIColor.black.cgColor
+        cell.ViewShadow.layer.shadowOpacity = 0.1
+        cell.ViewShadow.layer.shadowPath = shadowPath.cgPath
+        
+        cell.labelClassName.numberOfLines = 1
+        cell.labelClassName.text = grade.className
+        cell.labelNumericalGrade.text = grade.termGrade
+        cell.labelLetterGrade.text = grade.termLetter
+        cell.labelNavigation.text = "→"
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

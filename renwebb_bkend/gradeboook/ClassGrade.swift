@@ -11,19 +11,22 @@ import Foundation
 class ClassGrade {
     
     var className: String
+    var classCode: String
     var termGrade: String
     var termLetter: String
     var categories: [GradeCategory]
     
     init() {
         className = ""
+        classCode = ""
         termGrade = ""
         termLetter = ""
         categories = []
     }
     
-    init(className: String, termGrade: String, termLetter: String, categories: [GradeCategory]) {
+    init(className: String, classCode: String, termGrade: String, termLetter: String, categories: [GradeCategory]) {
         self.className = className
+        self.classCode = classCode
         self.termGrade = termGrade
         self.termLetter = termLetter
         self.categories = categories

@@ -45,12 +45,17 @@ class ClassColorPicker {
         defaults.set(encodedColorData, forKey: classCode)
     }
     
+    func deleteColor(classCode: String) {
+        defaults.set(nil, forKey: classCode)
+    }
+    
     func getColor(classCode: String) -> UIColor?{
-        let encodedColorData = defaults.object(forKey: classCode) as? Data
-        if let decodedColor = NSKeyedUnarchiver.unarchiveObject(with: encodedColorData!) as? UIColor {
-            return decodedColor
+        if let encodedColorData = defaults.object(forKey: classCode) as? Data {
+            let decodedColor = NSKeyedUnarchiver.unarchiveObject(with: encodedColorData)
+            return decodedColor as? UIColor
         } else {
-            return nil
+            autoSetColor(classCode: classCode)
+            return getColor(classCode: classCode)
         }
     }
     

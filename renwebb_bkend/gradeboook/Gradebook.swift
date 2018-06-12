@@ -108,7 +108,10 @@ class Gradebook {
             let newClass = ClassGrade()
             do {
                 let tables = try doc.select("body > table")
-                let className = try tables.get(0).select("tbody > tr").last()?.text()
+                let headerTrs = try tables.get(0).select("tbody > tr")
+                let className = try headerTrs.last()?.text()
+                let classCode = try headerTrs.get(headerTrs.size() - 2).text()
+                newClass.classCode = classCode
                 newClass.className = className!
                 // i represents the index of a category
                 for i in 1...((tables.size() - 1) / 2) {

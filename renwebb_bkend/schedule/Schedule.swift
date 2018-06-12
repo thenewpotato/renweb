@@ -214,9 +214,8 @@ class Schedule {
                     let tds = try trs.get(i).select("td")
                     let classCode = try tds.get(1).text()
                     classCodeToName[classCode] = try tds.get(0).text()
-                    if classColorPicker.getColor(classCode: classCode) == nil {
-                        classColorPicker.autoSetColor(classCode: classCode)
-                    }
+                   // classColorPicker.deleteColor(classCode: classCode)
+                    classColorPicker.getColor(classCode: classCode)
                 }
             } catch {
                 print("Error parsing class code <-> name dictionary")

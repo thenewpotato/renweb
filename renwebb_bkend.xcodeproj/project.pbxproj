@@ -22,10 +22,12 @@
 		E24DA9A120547F0400CDDDDA /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E24DA99420547EC500CDDDDA /* Alamofire.framework */; };
 		E24DA9A220547F0400CDDDDA /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E24DA99420547EC500CDDDDA /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E24DA9A720547FD600CDDDDA /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24DA9A620547FD600CDDDDA /* Login.swift */; };
+		E24E212B20D0110D00A32757 /* GradeColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24E212A20D0110D00A32757 /* GradeColorPicker.swift */; };
 		E25DCA3720CC7DD30037B2B3 /* ClassColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DCA3620CC7DD30037B2B3 /* ClassColorPicker.swift */; };
 		E260477220B4F0720075DB03 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260477120B4F0720075DB03 /* Schedule.swift */; };
 		E26E04582072F3BD00EAA7DF /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26E04572072F3BD00EAA7DF /* KeychainError.swift */; };
 		E2A59FD320B8FD5900F2E6B4 /* ClassSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59FD220B8FD5900F2E6B4 /* ClassSchedule.swift */; };
+		E2A6D1A120D002770090B2ED /* GradebookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A6D1A020D002770090B2ED /* GradebookTableViewCell.swift */; };
 		E2B9FDE220CD7B9A00B8620D /* SchedulePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9FDE120CD7B9A00B8620D /* SchedulePageViewController.swift */; };
 		E2BA858F20B1E5ED00A37950 /* SwiftSoup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2BA858620B1E5A300A37950 /* SwiftSoup.framework */; };
 		E2BA859020B1E5ED00A37950 /* SwiftSoup.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E2BA858620B1E5A300A37950 /* SwiftSoup.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -190,10 +192,12 @@
 		E24DA97C20547E3B00CDDDDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E24DA98820547EC500CDDDDA /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		E24DA9A620547FD600CDDDDA /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		E24E212A20D0110D00A32757 /* GradeColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeColorPicker.swift; sourceTree = "<group>"; };
 		E25DCA3620CC7DD30037B2B3 /* ClassColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassColorPicker.swift; sourceTree = "<group>"; };
 		E260477120B4F0720075DB03 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		E26E04572072F3BD00EAA7DF /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
 		E2A59FD220B8FD5900F2E6B4 /* ClassSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassSchedule.swift; sourceTree = "<group>"; };
+		E2A6D1A020D002770090B2ED /* GradebookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradebookTableViewCell.swift; sourceTree = "<group>"; };
 		E2B9FDE120CD7B9A00B8620D /* SchedulePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePageViewController.swift; sourceTree = "<group>"; };
 		E2BA857D20B1E5A200A37950 /* SwiftSoup.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftSoup.xcodeproj; path = SwiftSoup/SwiftSoup.xcodeproj; sourceTree = "<group>"; };
 		E2BA859320B1E69000A37950 /* KeychainServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServices.swift; sourceTree = "<group>"; };
@@ -241,6 +245,7 @@
 				E2F00D0620BDF080005E9D62 /* GradeCategory.swift */,
 				E2F00D0820BDF08E005E9D62 /* GradeAssignment.swift */,
 				E2F00D0A20BDF19D005E9D62 /* AssignmentStatus.swift */,
+				E24E212A20D0110D00A32757 /* GradeColorPicker.swift */,
 			);
 			path = gradeboook;
 			sourceTree = "<group>";
@@ -319,16 +324,17 @@
 			isa = PBXGroup;
 			children = (
 				E24DA95E20547E3B00CDDDDA /* Main.storyboard */,
+				E24DA95C20547E3B00CDDDDA /* LoginViewController.swift */,
+				E242650620CF18F80006052D /* EmptyViewController.swift */,
+				E2324BA020C988F4007D2D8F /* GradebookTableViewController.swift */,
+				E2A6D1A020D002770090B2ED /* GradebookTableViewCell.swift */,
 				E2B9FDE120CD7B9A00B8620D /* SchedulePageViewController.swift */,
 				E2324B9320C988DF007D2D8F /* ScheduleTableViewController.swift */,
 				E242650220CEBB980006052D /* ScheduleAssignmentsTableViewController.swift */,
 				E2324BA420C9B4D7007D2D8F /* ScheduleTableViewCell.swift */,
 				E242650420CEC2A50006052D /* ScheduleAssignmentsTableViewCell.swift */,
-				E24DA95C20547E3B00CDDDDA /* LoginViewController.swift */,
-				E2BA859520B21B8700A37950 /* GradebookViewController.swift */,
 				E2BA85AA20B228C500A37950 /* SettingsViewController.swift */,
-				E2324BA020C988F4007D2D8F /* GradebookTableViewController.swift */,
-				E242650620CF18F80006052D /* EmptyViewController.swift */,
+				E2BA859520B21B8700A37950 /* GradebookViewController.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -597,6 +603,7 @@
 				E24DA95D20547E3B00CDDDDA /* LoginViewController.swift in Sources */,
 				E2BA859420B1E69000A37950 /* KeychainServices.swift in Sources */,
 				E2324BA520C9B4D7007D2D8F /* ScheduleTableViewCell.swift in Sources */,
+				E24E212B20D0110D00A32757 /* GradeColorPicker.swift in Sources */,
 				E24DA95B20547E3B00CDDDDA /* AppDelegate.swift in Sources */,
 				E2F00CF820BDEF27005E9D62 /* Gradebook.swift in Sources */,
 				E2BA859620B21B8700A37950 /* GradebookViewController.swift in Sources */,
@@ -606,6 +613,7 @@
 				E2A59FD320B8FD5900F2E6B4 /* ClassSchedule.swift in Sources */,
 				E242650320CEBB980006052D /* ScheduleAssignmentsTableViewController.swift in Sources */,
 				E2F00D0B20BDF19D005E9D62 /* AssignmentStatus.swift in Sources */,
+				E2A6D1A120D002770090B2ED /* GradebookTableViewCell.swift in Sources */,
 				E2F00D0920BDF08E005E9D62 /* GradeAssignment.swift in Sources */,
 				E242650520CEC2A50006052D /* ScheduleAssignmentsTableViewCell.swift in Sources */,
 				E2B9FDE220CD7B9A00B8620D /* SchedulePageViewController.swift in Sources */,
