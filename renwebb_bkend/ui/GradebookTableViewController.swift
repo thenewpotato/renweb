@@ -42,12 +42,10 @@ class GradebookTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return grades.count
     }
 
@@ -123,5 +121,31 @@ class GradebookTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? GradebookTableViewCell else {
+            fatalError("The retrieved cell is not an instance of GradebookTableViewCell.")
+        }
+        UIView.animate(withDuration: 0.0001, animations: {
+            cell.ViewContainer.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+            cell.ViewShadow.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+        })
+    }
+    
+    override func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? GradebookTableViewCell else {
+            fatalError("The retrieved cell is not an instance of GradebookTableViewCell.")
+        }
+        UIView.animate(withDuration: 0.05, animations: {
+            cell.ViewContainer.transform = CGAffineTransform.identity
+            cell.ViewShadow.transform = CGAffineTransform.identity
+        }, completion: { _ in
+            // Presents categories
+            let classToPresent = self.grades[indexPath.row]
+            let gradebookCategoriesTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "gradebookCategoriesTableViewController") as? GradebookCategoriesTableViewController
+            gradebookCategoriesTableViewController?.initialize(gradeClass: classToPresent)
+            self.navigationController?.pushViewController(gradebookCategoriesTableViewController!, animated: true)
+        })
+    }
 
 }

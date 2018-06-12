@@ -27,4 +27,16 @@ class GradeColorPicker {
         }
     }
     
+    func getColor(numericalGrade: String) -> UIColor {
+        if numericalGrade == "" {
+            return green
+        } else if Float(numericalGrade)! > 87 {
+            return green
+        } else if Float(numericalGrade)! > 69.45 {
+            return yellow
+        } else {
+            return red
+        }
+    }
+    
 }
