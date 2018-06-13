@@ -9,6 +9,7 @@
 import UIKit
 
 class GradebookCategoriesTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var ViewShadow: UIView!
     @IBOutlet weak var ViewContainer: UIView!
     @IBOutlet weak var labelClassName: UILabel!

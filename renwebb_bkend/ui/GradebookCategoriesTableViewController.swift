@@ -58,10 +58,10 @@ class GradebookCategoriesTableViewController: UITableViewController {
         
         cell.labelClassName.text = gradeClass?.className
         cell.labelCategoryName.text = category.name
-        cell.labelWeight.text = category.weight + "%"
+        cell.labelWeight.text = category.weight
         cell.labelCategoryAverage.text = category.categoryAverage
         
-        // Shadow implementation migrated to ScheduleAssignmentsTableViewCell
+        // TODO: Shadow implementation in GradebookCategoriesTableCell
         
         return cell
     }

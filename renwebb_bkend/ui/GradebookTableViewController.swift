@@ -11,6 +11,7 @@ import UIKit
 class GradebookTableViewController: UITableViewController {
     
     let cellIdentifier = "gradebookTableViewCell"
+    weak var delegate: GradebookCategoryPageViewControllerDelegate?
     var gradebook: Gradebook?
     var gradeColorPicker: GradeColorPicker?
     var grades = [ClassGrade]()
@@ -24,7 +25,7 @@ class GradebookTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        gradebook = Gradebook(gradebookUrls: ["http://adoring-easley-1ecaa1.bitballoon.com/", "http://distracted-lalande-f44be5.bitballoon.com/", "http://sleepy-leavitt-29a880.bitballoon.com/", "http://modest-bohr-6934b5.bitballoon.com/", "http://clever-tereshkova-52ed4e.bitballoon.com/", "http://vibrant-joliot-4e153a.bitballoon.com/"])
+        gradebook = Gradebook(gradebookUrls: ["http://relaxed-brahmagupta-89cc7b.bitballoon.com/", "http://admiring-montalcini-f91bb3.bitballoon.com/", "http://eager-goldwasser-55636a.bitballoon.com/"])
         gradeColorPicker = GradeColorPicker()
         gradebook!.getGrades(completion: { newGrades in
             self.grades.append(contentsOf: newGrades!)
@@ -142,9 +143,9 @@ class GradebookTableViewController: UITableViewController {
         }, completion: { _ in
             // Presents categories
             let classToPresent = self.grades[indexPath.row]
-            let gradebookCategoriesTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "gradebookCategoriesTableViewController") as? GradebookCategoriesTableViewController
-            gradebookCategoriesTableViewController?.initialize(gradeClass: classToPresent)
-            self.navigationController?.pushViewController(gradebookCategoriesTableViewController!, animated: true)
+            let gradebookCategoryPageViewController = self.storyboard?.instantiateViewController(withIdentifier: "gradebookCategoryPageViewController") as? GradebookCategoryPageViewController
+            self.delegate?.didInstantiateController(classToPresent: classToPresent)
+            self.navigationController?.pushViewController(gradebookCategoryPageViewController!, animated: true)
         })
     }
 
