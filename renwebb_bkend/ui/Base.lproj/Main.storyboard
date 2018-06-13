@@ -526,7 +526,7 @@
         <!--Gradebook Category Page View Controller-->
         <scene sceneID="Js5-XX-O0v">
             <objects>
-                <pageViewController storyboardIdentifier="gradebookCategoryPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="xpy-ie-JYA" customClass="GradebookCategoryPageViewController" customModule="renwebb_bkend" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="gradebookCategoryPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="xpy-ie-JYA" customClass="GradebookCategoryPageViewController" customModule="renwebb_bkend" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zxh-Te-ACr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6547" y="-1645"/>
@@ -627,7 +627,7 @@
                                     <constraint firstItem="aJk-Xa-TbN" firstAttribute="leading" secondItem="jPG-yl-Ial" secondAttribute="leading" constant="10" id="yd3-eK-e4l"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6At-Rk-zG2">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6At-Rk-zG2">
                                 <rect key="frame" x="15" y="155" width="384" height="566"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>

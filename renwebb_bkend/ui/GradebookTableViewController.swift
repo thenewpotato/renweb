@@ -24,8 +24,8 @@ class GradebookTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        gradebook = Gradebook(gradebookUrls: ["http://relaxed-brahmagupta-89cc7b.bitballoon.com/", "http://admiring-montalcini-f91bb3.bitballoon.com/", "http://eager-goldwasser-55636a.bitballoon.com/"])
+
+        gradebook = Gradebook(gradebookUrls: ["https://thenewpotato.github.io/renwebb/0.html", "https://thenewpotato.github.io/renwebb/1.html", "https://thenewpotato.github.io/renwebb/2.html", "https://thenewpotato.github.io/renwebb/3.html", "https://thenewpotato.github.io/renwebb/4.html", "https://thenewpotato.github.io/renwebb/5.html"])
         gradeColorPicker = GradeColorPicker()
         gradebook!.getGrades(completion: { newGrades in
             self.grades.append(contentsOf: newGrades!)
@@ -144,6 +144,7 @@ class GradebookTableViewController: UITableViewController {
             // Presents categories
             let classToPresent = self.grades[indexPath.row]
             let gradebookCategoryPageViewController = self.storyboard?.instantiateViewController(withIdentifier: "gradebookCategoryPageViewController") as? GradebookCategoryPageViewController
+            self.delegate = gradebookCategoryPageViewController
             self.delegate?.didInstantiateController(classToPresent: classToPresent)
             self.navigationController?.pushViewController(gradebookCategoryPageViewController!, animated: true)
         })

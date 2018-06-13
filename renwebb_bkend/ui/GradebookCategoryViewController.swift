@@ -32,6 +32,21 @@ class GradebookCategoryViewController: UIViewController, GradebookCategoryViewCo
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        viewContainer.layer.cornerRadius = 8
+        viewContainer.layer.masksToBounds = true
+        viewContainer.layer.backgroundColor = GradeColorPicker().getColor(numericalGrade: categoryToPresent.categoryAverage).cgColor
+        
+        let shadowPath = UIBezierPath(rect: viewShadow.bounds)
+        viewShadow.layer.masksToBounds = false
+        viewShadow.layer.shadowOffset = CGSize(width: CGFloat(5.0), height: CGFloat(10.0))
+        viewShadow.layer.shadowColor = UIColor.black.cgColor
+        viewShadow.layer.shadowOpacity = 0.1
+        viewShadow.layer.shadowPath = shadowPath.cgPath
+        
+        labelClassName.text = className
+        labelCategoryName.text = categoryToPresent.name
+        labelCategoryWeight.text = categoryToPresent.weight
+        labelCategoryAverage.text = categoryToPresent.categoryAverage
         
         tableViewAssignments.delegate = self
         tableViewAssignments.dataSource = self

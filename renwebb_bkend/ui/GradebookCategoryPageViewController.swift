@@ -11,11 +11,11 @@ import UIKit
 class GradebookCategoryPageViewController: UIPageViewController, GradebookCategoryPageViewControllerDelegate {
     
     weak var gradebookCategoryViewControllerDelegate: GradebookCategoryViewControllerDelegate?
-    var classGrade: ClassGrade?
-    var categoryVCs = [GradebookCategoryViewController]()
+    var classGrade = ClassGrade()
     
     // Delegate method
     func didInstantiateController(classToPresent: ClassGrade) {
+        print("Processing delegate")
         classGrade = classToPresent
     }
 
@@ -23,12 +23,12 @@ class GradebookCategoryPageViewController: UIPageViewController, GradebookCatego
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        for category in classGrade!.categories {
-            let categoryVC = storyboard?.instantiateViewController(withIdentifier: "gradebookCategoryViewController") as! GradebookCategoryViewController
-            gradebookCategoryViewControllerDelegate?.didInstantiateController(categoryToPresent: category, className: classGrade!.className)
-            categoryVCs.append(categoryVC)
-        }
-        setViewControllers(categoryVCs, direction: .forward, animated: true, completion: nil)
+        dataSource = self
+        
+        let categoryVC = storyboard?.instantiateViewController(withIdentifier: "gradebookCategoryViewController") as! GradebookCategoryViewController
+        gradebookCategoryViewControllerDelegate = categoryVC
+        gradebookCategoryViewControllerDelegate?.didInstantiateController(categoryToPresent: classGrade.categories[0], className: classGrade.className)
+        setViewControllers([categoryVC], direction: .forward, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +47,39 @@ class GradebookCategoryPageViewController: UIPageViewController, GradebookCatego
     */
 
 }
+
+extension GradebookCategoryPageViewController: UIPageViewControllerDataSource {
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        let categoryVC = viewController as! GradebookCategoryViewController
+        let count = classGrade.categories.index(where: {(gradeCategory) -> Bool in
+            gradeCategory.name == categoryVC.categoryToPresent.name
+        })!
+        if count > 0 {
+            let categoryVC = storyboard?.instantiateViewController(withIdentifier: "gradebookCategoryViewController") as! GradebookCategoryViewController
+            gradebookCategoryViewControllerDelegate = categoryVC
+            gradebookCategoryViewControllerDelegate?.didInstantiateController(categoryToPresent: classGrade.categories[count - 1], className: classGrade.className)
+            return categoryVC
+        }
+        return nil
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        let categoryVC = viewController as! GradebookCategoryViewController
+        let count = classGrade.categories.index(where: {(gradeCategory) -> Bool in
+            gradeCategory.name == categoryVC.categoryToPresent.name
+        })!
+        if count < (classGrade.categories.count - 1) {
+            let categoryVC = storyboard?.instantiateViewController(withIdentifier: "gradebookCategoryViewController") as! GradebookCategoryViewController
+            gradebookCategoryViewControllerDelegate = categoryVC
+            gradebookCategoryViewControllerDelegate?.didInstantiateController(categoryToPresent: classGrade.categories[count + 1], className: classGrade.className)
+            return categoryVC
+        }
+        return nil
+    }
+    
+}
+
 
 protocol GradebookCategoryPageViewControllerDelegate: class {
     // This delegate handles the information passing from GradebookTableVC to GradebookCategoryPageVC
