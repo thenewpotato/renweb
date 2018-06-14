@@ -10,6 +10,8 @@ import UIKit
 
 class GradebookCategoryViewController: UIViewController, GradebookCategoryViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
+    let allAssignmentsNormalMessage = "✓ All assignments normal"
+    let someAssignmentsAbormalMessage = " assignments are missing"
     @IBOutlet weak var viewShadow: UIView!
     @IBOutlet weak var viewContainer: UIView!
     @IBOutlet weak var labelClassName: UILabel!
@@ -48,8 +50,22 @@ class GradebookCategoryViewController: UIViewController, GradebookCategoryViewCo
         labelCategoryWeight.text = categoryToPresent.weight
         labelCategoryAverage.text = categoryToPresent.categoryAverage
         
+        var abnormalAssignments = 0
+        for assignment in categoryToPresent.assignments {
+            if assignment.status == GradebookAssignmentStatus.missing {
+                abnormalAssignments += 1
+            }
+        }
+        if abnormalAssignments > 0 {
+            labelAssignmentStatus.text = "! " + String(abnormalAssignments) + someAssignmentsAbormalMessage
+        } else {
+            labelAssignmentStatus.text = allAssignmentsNormalMessage
+        }
+        
         tableViewAssignments.delegate = self
         tableViewAssignments.dataSource = self
+        tableViewAssignments.rowHeight = UITableViewAutomaticDimension
+        tableViewAssignments.estimatedRowHeight = 85
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,9 +100,37 @@ class GradebookCategoryViewController: UIViewController, GradebookCategoryViewCo
         let assignment = categoryToPresent.assignments[indexPath.row]
         
         // MARK: configure the cell...
+        cell.viewContainer.layer.cornerRadius = 8
+        cell.viewContainer.layer.masksToBounds = true
+        cell.viewContainer.layer.backgroundColor = GradeColorPicker().getColor(numericalGrade: assignment.average).cgColor
+        
+        cell.labelAssignmentDate.text = assignment.date
+        cell.labelAssignmentPts.text = assignment.points + "/" + assignment.max
+        cell.labelAssignmentPercentage.text = assignment.average + "%"
+        cell.labelAssignmentStatus.text = getAssignmentStatusMessage(status: assignment.status)
+        
         cell.labelAssignmentName.text = assignment.name
         
+        if assignment.status == GradebookAssignmentStatus.missing {
+            cell.labelAssignmentStatus.font = UIFont.boldSystemFont(ofSize: 15.0)
+        }
+        if assignment.status == GradebookAssignmentStatus.pending {
+            cell.viewContainer.layer.backgroundColor = GradeColorPicker().green.cgColor
+            
+        }
+        
         return cell
+    }
+    
+    func getAssignmentStatusMessage(status: GradebookAssignmentStatus) -> String {
+        switch status {
+        case GradebookAssignmentStatus.valid:
+            return "VALID ✓"
+        case GradebookAssignmentStatus.pending:
+            return "PENDING"
+        case GradebookAssignmentStatus.missing:
+            return "MISSING !"
+        }
     }
     
 

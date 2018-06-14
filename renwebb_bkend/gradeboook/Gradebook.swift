@@ -136,17 +136,17 @@ class Gradebook {
                             let assignmentTr = assignmentTrs.get(l)
                             let newAssignment = GradeAssignment()
                             newAssignment.name = try assignmentTr.select("td:nth-child(1)").text()
-                            print("assignment name: " + newAssignment.name )
+                            //print("assignment name: " + newAssignment.name )
                             newAssignment.points = try assignmentTr.select("td:nth-child(2)").text()
-                            print("assignment points: " + newAssignment.points)
+                            //print("assignment points: " + newAssignment.points)
                             newAssignment.max = try assignmentTr.select("td:nth-child(3)").text()
-                            print("assignment max: " + newAssignment.max )
+                            //print("assignment max: " + newAssignment.max )
                             newAssignment.average = try assignmentTr.select("td:nth-child(4)").text()
-                            print("assignment average: " + newAssignment.average )
-                            newAssignment.status = try assignmentTr.select("td:nth-child(5)").text()
-                            print("assignment status: " + newAssignment.status )
+                            //print("assignment average: " + newAssignment.average )
+                            newAssignment.status = try getAssignmentStatus(statusMessage: assignmentTr.select("td:nth-child(5)").text())
+                            //print("assignment status: " + newAssignment.status )
                             newAssignment.date = try assignmentTr.select("td:nth-child(6)").text()
-                            print("assignment status: " + newAssignment.date )
+                            //print("assignment status: " + newAssignment.date )
                             newCategory.assignments.append(newAssignment)
                         }
                         newCategory.categoryAverage = try (assignmentTrs.get(assignmentTrs.size() - 1).select("td:nth-child(2)").text())
@@ -165,4 +165,23 @@ class Gradebook {
         }
     }
     
+    private func getAssignmentStatus(statusMessage: String) -> GradebookAssignmentStatus {
+        switch statusMessage {
+        case "Valid":
+            return GradebookAssignmentStatus.valid
+        case "Pending":
+            return GradebookAssignmentStatus.pending
+        case "Missing":
+            return GradebookAssignmentStatus.missing
+        default:
+            return GradebookAssignmentStatus.valid
+        }
+    }
+    
+}
+
+enum GradebookAssignmentStatus {
+    case valid
+    case pending
+    case missing
 }

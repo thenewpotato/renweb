@@ -215,7 +215,7 @@ class Schedule {
                     let classCode = try tds.get(1).text()
                     classCodeToName[classCode] = try tds.get(0).text()
                    // classColorPicker.deleteColor(classCode: classCode)
-                    classColorPicker.getColor(classCode: classCode)
+                    let _ = classColorPicker.getColor(classCode: classCode)
                 }
             } catch {
                 print("Error parsing class code <-> name dictionary")
@@ -255,7 +255,6 @@ class Schedule {
     
     private func parseHW(date: Date) {
         print("Parsing HW...")
-        print(HWDoc)
         if HWDoc != nil {
             let formatter = DateFormatter()
             formatter.dateFormat = "MM/dd/yyyy"

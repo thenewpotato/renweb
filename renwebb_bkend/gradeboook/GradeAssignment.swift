@@ -14,7 +14,7 @@ class GradeAssignment {
     var points: String
     var max: String
     var average: String
-    var status: String
+    var status: GradebookAssignmentStatus
     var date: String
     
     init() {
@@ -22,11 +22,11 @@ class GradeAssignment {
         points = ""
         max = ""
         average = ""
-        status = ""
+        status = GradebookAssignmentStatus.valid
         date = ""
     }
     
-    init(name: String, points: String, max: String, average: String, status: String, date: String) {
+    init(name: String, points: String, max: String, average: String, status: GradebookAssignmentStatus, date: String) {
         self.name = name
         self.points = points
         self.max = max

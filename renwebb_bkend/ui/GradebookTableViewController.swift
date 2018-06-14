@@ -11,6 +11,8 @@ import UIKit
 class GradebookTableViewController: UITableViewController {
     
     let cellIdentifier = "gradebookTableViewCell"
+    let allAssignmentsNormalMessage = "All assignments normal →"
+    let someAssignmentsAbormalMessage = " assignments are missing →"
     weak var delegate: GradebookCategoryPageViewControllerDelegate?
     var gradebook: Gradebook?
     var gradeColorPicker: GradeColorPicker?
@@ -24,10 +26,20 @@ class GradebookTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        // Shows overlay activity indicator
+        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        loadingIndicator.startAnimating();
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
 
         gradebook = Gradebook(gradebookUrls: ["https://thenewpotato.github.io/renwebb/0.html", "https://thenewpotato.github.io/renwebb/1.html", "https://thenewpotato.github.io/renwebb/2.html", "https://thenewpotato.github.io/renwebb/3.html", "https://thenewpotato.github.io/renwebb/4.html", "https://thenewpotato.github.io/renwebb/5.html"])
         gradeColorPicker = GradeColorPicker()
         gradebook!.getGrades(completion: { newGrades in
+            self.dismiss(animated: true, completion: nil)
             self.grades.append(contentsOf: newGrades!)
             let indexPaths = (self.grades.count - newGrades!.count ..< self.grades.count)
                 .map { IndexPath(row: $0, section: 0) }
@@ -73,7 +85,20 @@ class GradebookTableViewController: UITableViewController {
         cell.labelClassName.text = grade.className
         cell.labelNumericalGrade.text = grade.termGrade
         cell.labelLetterGrade.text = grade.termLetter
-        cell.labelNavigation.text = "→"
+        
+        var abnormalAssignments = 0
+        for category in grade.categories {
+            for assignment in category.assignments {
+                if assignment.status == GradebookAssignmentStatus.missing {
+                    abnormalAssignments += 1
+                }
+            }
+        }
+        if abnormalAssignments > 0 {
+            cell.labelNavigation.text = String(abnormalAssignments) + someAssignmentsAbormalMessage
+        } else {
+            cell.labelNavigation.text = allAssignmentsNormalMessage
+        }
 
         return cell
     }
