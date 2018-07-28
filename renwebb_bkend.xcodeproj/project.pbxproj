@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E20F2C53210C1BB700359B7B /* ChromaShadeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F2C41210C1BB600359B7B /* ChromaShadeSlider.swift */; };
+		E20F2C54210C1BB700359B7B /* UIColor+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F2C4D210C1BB600359B7B /* UIColor+Utilities.swift */; };
+		E20F2C55210C1BB700359B7B /* ColorModeToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F2C4E210C1BB600359B7B /* ColorModeToggleButton.swift */; };
+		E20F2C56210C1BB700359B7B /* ChromaAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F2C50210C1BB700359B7B /* ChromaAddButton.swift */; };
+		E20F2C57210C1BB700359B7B /* ChromaHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F2C51210C1BB700359B7B /* ChromaHandle.swift */; };
+		E20F2C58210C1BB700359B7B /* ChromaColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F2C52210C1BB700359B7B /* ChromaColorPicker.swift */; };
 		E2324B9420C988DF007D2D8F /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2324B9320C988DF007D2D8F /* ScheduleTableViewController.swift */; };
 		E2324BA120C988F4007D2D8F /* GradebookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2324BA020C988F4007D2D8F /* GradebookTableViewController.swift */; };
 		E2324BA520C9B4D7007D2D8F /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2324BA420C9B4D7007D2D8F /* ScheduleTableViewCell.swift */; };
@@ -24,6 +30,9 @@
 		E24DA9A720547FD600CDDDDA /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24DA9A620547FD600CDDDDA /* Login.swift */; };
 		E24E212B20D0110D00A32757 /* GradeColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24E212A20D0110D00A32757 /* GradeColorPicker.swift */; };
 		E24E213A20D01B2400A32757 /* GradebookCategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24E213920D01B2400A32757 /* GradebookCategoriesTableViewCell.swift */; };
+		E25C8602210CBFA5003578DA /* WeekendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25C8601210CBFA5003578DA /* WeekendViewController.swift */; };
+		E25C860F210CC876003578DA /* ColorPickerPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25C860E210CC876003578DA /* ColorPickerPopViewController.swift */; };
+		E25C8611210CE2AA003578DA /* ColorChangeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25C8610210CE2AA003578DA /* ColorChangeDelegate.swift */; };
 		E25DCA3720CC7DD30037B2B3 /* ClassColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DCA3620CC7DD30037B2B3 /* ClassColorPicker.swift */; };
 		E260477220B4F0720075DB03 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260477120B4F0720075DB03 /* Schedule.swift */; };
 		E26E04582072F3BD00EAA7DF /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26E04572072F3BD00EAA7DF /* KeychainError.swift */; };
@@ -173,6 +182,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E20F2C41210C1BB600359B7B /* ChromaShadeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaShadeSlider.swift; sourceTree = "<group>"; };
+		E20F2C4D210C1BB600359B7B /* UIColor+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utilities.swift"; sourceTree = "<group>"; };
+		E20F2C4E210C1BB600359B7B /* ColorModeToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorModeToggleButton.swift; sourceTree = "<group>"; };
+		E20F2C4F210C1BB700359B7B /* ChromaColorPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChromaColorPicker.h; sourceTree = "<group>"; };
+		E20F2C50210C1BB700359B7B /* ChromaAddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaAddButton.swift; sourceTree = "<group>"; };
+		E20F2C51210C1BB700359B7B /* ChromaHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaHandle.swift; sourceTree = "<group>"; };
+		E20F2C52210C1BB700359B7B /* ChromaColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaColorPicker.swift; sourceTree = "<group>"; };
 		E2324B9320C988DF007D2D8F /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		E2324BA020C988F4007D2D8F /* GradebookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradebookTableViewController.swift; sourceTree = "<group>"; };
 		E2324BA420C9B4D7007D2D8F /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
@@ -195,6 +211,9 @@
 		E24DA9A620547FD600CDDDDA /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		E24E212A20D0110D00A32757 /* GradeColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeColorPicker.swift; sourceTree = "<group>"; };
 		E24E213920D01B2400A32757 /* GradebookCategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradebookCategoriesTableViewCell.swift; sourceTree = "<group>"; };
+		E25C8601210CBFA5003578DA /* WeekendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekendViewController.swift; sourceTree = "<group>"; };
+		E25C860E210CC876003578DA /* ColorPickerPopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerPopViewController.swift; sourceTree = "<group>"; };
+		E25C8610210CE2AA003578DA /* ColorChangeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChangeDelegate.swift; sourceTree = "<group>"; };
 		E25DCA3620CC7DD30037B2B3 /* ClassColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassColorPicker.swift; sourceTree = "<group>"; };
 		E260477120B4F0720075DB03 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		E26E04572072F3BD00EAA7DF /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
@@ -239,6 +258,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E20F2C5A210C1BCE00359B7B /* chromacolor */ = {
+			isa = PBXGroup;
+			children = (
+				E20F2C50210C1BB700359B7B /* ChromaAddButton.swift */,
+				E20F2C4F210C1BB700359B7B /* ChromaColorPicker.h */,
+				E20F2C52210C1BB700359B7B /* ChromaColorPicker.swift */,
+				E20F2C51210C1BB700359B7B /* ChromaHandle.swift */,
+				E20F2C41210C1BB600359B7B /* ChromaShadeSlider.swift */,
+				E20F2C4E210C1BB600359B7B /* ColorModeToggleButton.swift */,
+				E20F2C4D210C1BB600359B7B /* UIColor+Utilities.swift */,
+				E24DA95A20547E3B00CDDDDA /* AppDelegate.swift */,
+			);
+			path = chromacolor;
+			sourceTree = "<group>";
+		};
 		E239DE7120BF03C6002AD3A4 /* gradeboook */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,7 +310,7 @@
 		E24DA95920547E3B00CDDDDA /* renwebb_bkend */ = {
 			isa = PBXGroup;
 			children = (
-				E24DA95A20547E3B00CDDDDA /* AppDelegate.swift */,
+				E20F2C5A210C1BCE00359B7B /* chromacolor */,
 				E24DA96120547E3B00CDDDDA /* Assets.xcassets */,
 				E24DA96620547E3B00CDDDDA /* Info.plist */,
 				E260476520B4EECC0075DB03 /* ui */,
@@ -336,8 +370,11 @@
 				E2B9FDE120CD7B9A00B8620D /* SchedulePageViewController.swift */,
 				E2324B9320C988DF007D2D8F /* ScheduleTableViewController.swift */,
 				E242650220CEBB980006052D /* ScheduleAssignmentsTableViewController.swift */,
+				E25C8610210CE2AA003578DA /* ColorChangeDelegate.swift */,
 				E2324BA420C9B4D7007D2D8F /* ScheduleTableViewCell.swift */,
 				E242650420CEC2A50006052D /* ScheduleAssignmentsTableViewCell.swift */,
+				E25C8601210CBFA5003578DA /* WeekendViewController.swift */,
+				E25C860E210CC876003578DA /* ColorPickerPopViewController.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -601,22 +638,31 @@
 				E2F00D0720BDF080005E9D62 /* GradeCategory.swift in Sources */,
 				E2324BA120C988F4007D2D8F /* GradebookTableViewController.swift in Sources */,
 				E24DA9A720547FD600CDDDDA /* Login.swift in Sources */,
+				E20F2C55210C1BB700359B7B /* ColorModeToggleButton.swift in Sources */,
+				E20F2C57210C1BB700359B7B /* ChromaHandle.swift in Sources */,
 				E2C7E52120D167F200D02501 /* GradebookCategoryViewController.swift in Sources */,
 				E242650720CF18F80006052D /* EmptyViewController.swift in Sources */,
 				E26E04582072F3BD00EAA7DF /* KeychainError.swift in Sources */,
 				E24E213A20D01B2400A32757 /* GradebookCategoriesTableViewCell.swift in Sources */,
+				E25C8611210CE2AA003578DA /* ColorChangeDelegate.swift in Sources */,
 				E24DA95D20547E3B00CDDDDA /* LoginViewController.swift in Sources */,
 				E2BA859420B1E69000A37950 /* KeychainServices.swift in Sources */,
 				E2324BA520C9B4D7007D2D8F /* ScheduleTableViewCell.swift in Sources */,
 				E24E212B20D0110D00A32757 /* GradeColorPicker.swift in Sources */,
 				E24DA95B20547E3B00CDDDDA /* AppDelegate.swift in Sources */,
 				E2F00CF820BDEF27005E9D62 /* Gradebook.swift in Sources */,
+				E20F2C54210C1BB700359B7B /* UIColor+Utilities.swift in Sources */,
+				E25C860F210CC876003578DA /* ColorPickerPopViewController.swift in Sources */,
 				E2F00D0520BDF017005E9D62 /* ClassGrade.swift in Sources */,
 				E25DCA3720CC7DD30037B2B3 /* ClassColorPicker.swift in Sources */,
+				E20F2C56210C1BB700359B7B /* ChromaAddButton.swift in Sources */,
 				E260477220B4F0720075DB03 /* Schedule.swift in Sources */,
 				E2A59FD320B8FD5900F2E6B4 /* ClassSchedule.swift in Sources */,
+				E20F2C58210C1BB700359B7B /* ChromaColorPicker.swift in Sources */,
 				E2C7E52320D16D0C00D02501 /* GradebookCategoryPageViewController.swift in Sources */,
+				E25C8602210CBFA5003578DA /* WeekendViewController.swift in Sources */,
 				E242650320CEBB980006052D /* ScheduleAssignmentsTableViewController.swift in Sources */,
+				E20F2C53210C1BB700359B7B /* ChromaShadeSlider.swift in Sources */,
 				E2A6D1A120D002770090B2ED /* GradebookTableViewCell.swift in Sources */,
 				E2F00D0920BDF08E005E9D62 /* GradeAssignment.swift in Sources */,
 				E242650520CEC2A50006052D /* ScheduleAssignmentsTableViewCell.swift in Sources */,

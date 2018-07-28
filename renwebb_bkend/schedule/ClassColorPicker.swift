@@ -39,8 +39,7 @@ class ClassColorPicker {
         counter += 1
     }
     
-    func changeColor(classCode: String, red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
-        let color = UIColor(red: red, green: green, blue: blue, alpha: alpha)
+    func changeColor(classCode: String, color: UIColor) {
         let encodedColorData = NSKeyedArchiver.archivedData(withRootObject: color)
         defaults.set(encodedColorData, forKey: classCode)
     }

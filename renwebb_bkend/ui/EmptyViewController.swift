@@ -8,10 +8,16 @@
 
 import UIKit
 
-class EmptyViewController: UIViewController {
+class EmptyViewController: UIViewController, UIPopoverPresentationControllerDelegate, ColorPickPopViewControllerDelegate {
     
     @IBOutlet weak var labelEmoji: UILabel!
     @IBOutlet weak var labelMessage: UILabel!
+    var classSchedule: ClassSchedule?
+    weak var delegate: ColorChangeDelegate?
+    
+    func initialize(classSchedule: ClassSchedule) {
+        self.classSchedule = classSchedule
+    }
     
     func changeMessage(message: String) {
         labelMessage.text = message
@@ -25,6 +31,31 @@ class EmptyViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "colorPopOverSegue" {
+            let colorPopOverController = segue.destination
+            
+            colorPopOverController.modalPresentationStyle = UIModalPresentationStyle.popover
+            colorPopOverController.popoverPresentationController?.delegate = self
+            
+            let colorController = colorPopOverController as! ColorPickerPopViewController
+            colorController.colorPickerDelegate = self
+        }
+    }
+    
+    // MARK: - UIPopoverPresentationControllerDelegate method
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
+    
+    // MARK: - ColorPickPopViewControllerDelegate method
+    
+    func colorResponse(color: UIColor) {
+        classSchedule?.color = color.cgColor
+        delegate?.colorChanged(color: color, name: classSchedule!.name)
     }
     
 

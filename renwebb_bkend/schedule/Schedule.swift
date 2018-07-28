@@ -215,7 +215,7 @@ class Schedule {
                     let classCode = try tds.get(1).text()
                     classCodeToName[classCode] = try tds.get(0).text()
                    // classColorPicker.deleteColor(classCode: classCode)
-                    let _ = classColorPicker.getColor(classCode: classCode)
+                    let _ = classColorPicker.getColor(classCode: classCodeToName[classCode]!)
                 }
             } catch {
                 print("Error parsing class code <-> name dictionary")
@@ -243,7 +243,7 @@ class Schedule {
                         newClass.name = className!
                         newClass.time = classTime
                         newClass.loc = classLoc
-                        newClass.color = self.classColorPicker.getColor(classCode: classCode)!.cgColor
+                        newClass.color = self.classColorPicker.getColor(classCode: className!)!.cgColor
                         classes.append(newClass)
                     }
                 }

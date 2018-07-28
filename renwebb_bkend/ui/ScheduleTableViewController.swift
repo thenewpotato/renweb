@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScheduleTableViewController: UITableViewController {
+class ScheduleTableViewController: UITableViewController, ColorChangeDelegate {
     
     let cellIdentifier = "ScheduleTableViewCell"
     var schedule: Schedule?
@@ -113,14 +113,25 @@ class ScheduleTableViewController: UITableViewController {
             if (classToPresent.CW != "") || (classToPresent.HW != "") {
                 let scheduleAssignmentsTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "scheduleAssignmentsTableViewController") as! ScheduleAssignmentsTableViewController
                 scheduleAssignmentsTableViewController.initialize(classSchedule: classToPresent)
+                scheduleAssignmentsTableViewController.delegate = self
                 self.navigationController?.pushViewController(scheduleAssignmentsTableViewController, animated: true)
             } else {
                 let emptyViewController = self.storyboard?.instantiateViewController(withIdentifier: "emptyViewController") as! EmptyViewController
+                emptyViewController.initialize(classSchedule: classToPresent)
+                emptyViewController.delegate = self
                 self.navigationController?.pushViewController(emptyViewController, animated: true)
             }
-            
+        
             
         })
+    }
+    
+    // MARK: - ColorChangeDelegate method
+    
+    func colorChanged(color: UIColor, name: String) {
+        tableView.reloadData()
+        var picker = ClassColorPicker()
+        picker.changeColor(classCode: name, color: color)
     }
 
     /*

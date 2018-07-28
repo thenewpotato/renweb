@@ -38,12 +38,13 @@ class Gradebook {
     
     private func getDoc(completion: @escaping (Bool) -> ()) {
         self.urlCount += 1
-        print(gradebookUrls[urlCount])
+        // print(gradebookUrls[urlCount])
         Alamofire.request(gradebookUrls[urlCount]).responseString { response in
             do {
                 var gradebookDoc = try SwiftSoup.parse(response.result.value!)
-                let table = try gradebookDoc.select("table").first()
-                let h3 = try gradebookDoc.select("h3").first()
+                let table = try gradebookDoc.select("body > table").first()
+                let h3 = try gradebookDoc.select("body > h3").first()
+                // try print(gradebookDoc.html())
                 // case that Document shows authentication error
                 if (table == nil) && (h3 == nil) {
                     print("Gradebook timed out... retrying login")

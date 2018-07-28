@@ -99,9 +99,9 @@ class Login {
                                 let forms: Elements = try doc.select("form")
                                 if (forms.array().count > 1) {
                                     gradeURLs.removeAll()
-                                    for i in 1...(forms.array().count - 1) {
+                                    for i in 2...(forms.array().count - 2) {
                                         let fields: Elements = try forms.get(i).select("input")
-                                        try gradeURLs.append("https://tws-tn.client.renweb.com/renweb/reports/parentsweb/parentsweb_reports.cfm?"
+                                        try gradeURLs.append("https://tws-tn.client.renweb.com/pw/NAScopy/Gradebook/GradeBookProgressReport-PW.cfm?"
                                             + "District=TWS-TN" + "&ReportType=Gradebook"
                                             + "&sessionid=" + fields.get(2).attr("value")
                                             + "&ReportHash=" + fields.get(3).attr("value")
@@ -109,9 +109,10 @@ class Login {
                                             + "&StudentID=" + fields.get(5).attr("value")
                                             + "&ClassID=" + fields.get(6).attr("value")
                                             + "&TermID=" + fields.get(7).attr("value"))
-                                        }
+                                        try print(fields.get(3).attr("value"))
+                                    }
                                 } else {
-                                    
+
                                 }
                             } catch Exception.Error(let message) {
                                 print(message)

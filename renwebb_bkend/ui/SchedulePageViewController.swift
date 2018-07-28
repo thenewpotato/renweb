@@ -22,11 +22,19 @@ class SchedulePageViewController: UIPageViewController {
         schedule = Schedule(scheduleUrl: Login.scheduleURL)
         
         formatter.dateFormat = "yyyy-MM-dd"
-        dateOfCurrentPage = formatter.date(from: "2018-02-15")
+        dateOfCurrentPage = Date()
         dataSource = self
-        let todayView = storyboard?.instantiateViewController(withIdentifier: "scheduleTableViewController") as! ScheduleTableViewController
-        todayView.initialize(date: dateOfCurrentPage, schedule: schedule)
-        setViewControllers([todayView], direction: .forward, animated: true, completion: nil)
+        
+        if (Calendar.current.component(.weekday, from: dateOfCurrentPage!) == 1) || (Calendar.current.component(.weekday, from: dateOfCurrentPage!) == 7) {
+            let weekendViewController = storyboard?.instantiateViewController(withIdentifier: "weekendViewController") as! WeekendViewController
+            setViewControllers([weekendViewController], direction: .forward, animated: true, completion: nil)
+        } else {
+            let todayView = storyboard?.instantiateViewController(withIdentifier: "scheduleTableViewController") as! ScheduleTableViewController
+            todayView.initialize(date: dateOfCurrentPage, schedule: schedule)
+            setViewControllers([todayView], direction: .forward, animated: true, completion: nil)
+        }
+        
+        
         self.navigationItem.title = formatterForUi.string(from: dateOfCurrentPage!)
         // Do any additional setup after loading the view.
     }
@@ -38,16 +46,15 @@ class SchedulePageViewController: UIPageViewController {
     
     @IBAction func buttonYesterday(_ sender: Any) {
         dateOfCurrentPage = Calendar.current.date(byAdding: .day, value: -1, to: dateOfCurrentPage!)
+        self.navigationItem.title = formatterForUi.string(from: dateOfCurrentPage!)
         // TODO: Add support for weekends
         if (Calendar.current.component(.weekday, from: dateOfCurrentPage!) == 1) || (Calendar.current.component(.weekday, from: dateOfCurrentPage!) == 7) {
-            let emptyViewController = storyboard?.instantiateViewController(withIdentifier: "emptyViewController") as! EmptyViewController
-            setViewControllers([emptyViewController], direction: .reverse, animated: true, completion: nil)
-            emptyViewController.changeMessage(message: "Weekend!")
+            let weekendViewController = storyboard?.instantiateViewController(withIdentifier: "weekendViewController") as! WeekendViewController
+            setViewControllers([weekendViewController], direction: .reverse, animated: true, completion: nil)
         } else {
             let yesterdayView = storyboard?.instantiateViewController(withIdentifier: "scheduleTableViewController") as! ScheduleTableViewController
             yesterdayView.initialize(date: dateOfCurrentPage, schedule: schedule)
             setViewControllers([yesterdayView], direction: .reverse, animated: true, completion: nil)
-            self.navigationItem.title = formatterForUi.string(from: dateOfCurrentPage!)
         }
     }
     
@@ -56,9 +63,8 @@ class SchedulePageViewController: UIPageViewController {
         self.navigationItem.title = formatterForUi.string(from: dateOfCurrentPage!)
         // TODO: Add support for weekends
         if (Calendar.current.component(.weekday, from: dateOfCurrentPage!) == 1) || (Calendar.current.component(.weekday, from: dateOfCurrentPage!) == 7) {
-            let emptyViewController = storyboard?.instantiateViewController(withIdentifier: "emptyViewController") as! EmptyViewController
-            setViewControllers([emptyViewController], direction: .forward, animated: true, completion: nil)
-            emptyViewController.changeMessage(message: "Weekend!")
+            let weekendViewController = storyboard?.instantiateViewController(withIdentifier: "weekendViewController") as! WeekendViewController
+            setViewControllers([weekendViewController], direction: .forward, animated: true, completion: nil)
         } else {let tomorrowView = storyboard?.instantiateViewController(withIdentifier: "scheduleTableViewController") as! ScheduleTableViewController
             tomorrowView.initialize(date: dateOfCurrentPage, schedule: schedule)
             setViewControllers([tomorrowView], direction: .forward, animated: true, completion: nil)

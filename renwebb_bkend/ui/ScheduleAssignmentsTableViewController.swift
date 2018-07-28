@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ScheduleAssignmentsTableViewController: UITableViewController {
+class ScheduleAssignmentsTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate, ColorPickPopViewControllerDelegate {
     
     let cellIdentifier = "ScheduleAssignmentsTableViewCell"
     var classSchedule: ClassSchedule?
+    weak var delegate: ColorChangeDelegate?
     
     func initialize(classSchedule: ClassSchedule) {
         self.classSchedule = classSchedule
@@ -76,6 +77,32 @@ class ScheduleAssignmentsTableViewController: UITableViewController {
         // Shadow implementation migrated to ScheduleAssignmentsTableViewCell
 
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "colorPopOverSegue" {
+            let colorPopOverController = segue.destination
+            
+            colorPopOverController.modalPresentationStyle = UIModalPresentationStyle.popover
+            colorPopOverController.popoverPresentationController?.delegate = self
+            
+            let colorController = colorPopOverController as! ColorPickerPopViewController
+            colorController.colorPickerDelegate = self
+        }
+    }
+    
+    // MARK: - UIPopoverPresentationControllerDelegate method
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
+    
+    // MARK: - ColorPickPopViewControllerDelegate method
+    
+    func colorResponse(color: UIColor) {
+        classSchedule?.color = color.cgColor
+        tableView.reloadData()
+        delegate?.colorChanged(color: color, name: classSchedule!.name)
     }
 
     /*

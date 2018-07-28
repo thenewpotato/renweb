@@ -36,7 +36,8 @@ class GradebookTableViewController: UITableViewController {
         alert.view.addSubview(loadingIndicator)
         present(alert, animated: true, completion: nil)
 
-        gradebook = Gradebook(gradebookUrls: ["https://thenewpotato.github.io/renwebb/0.html", "https://thenewpotato.github.io/renwebb/1.html", "https://thenewpotato.github.io/renwebb/2.html", "https://thenewpotato.github.io/renwebb/3.html", "https://thenewpotato.github.io/renwebb/4.html", "https://thenewpotato.github.io/renwebb/5.html"])
+        // gradebook = Gradebook(gradebookUrls: ["https://thenewpotato.github.io/renwebb/0.html", "https://thenewpotato.github.io/renwebb/1.html", "https://thenewpotato.github.io/renwebb/2.html", "https://thenewpotato.github.io/renwebb/3.html", "https://thenewpotato.github.io/renwebb/4.html", "https://thenewpotato.github.io/renwebb/5.html"])
+        gradebook = Gradebook(gradebookUrls: Login.gradeURLs)
         gradeColorPicker = GradeColorPicker()
         gradebook!.getGrades(completion: { newGrades in
             self.dismiss(animated: true, completion: nil)
