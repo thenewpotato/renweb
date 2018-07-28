@@ -33,6 +33,8 @@
 		E25C8602210CBFA5003578DA /* WeekendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25C8601210CBFA5003578DA /* WeekendViewController.swift */; };
 		E25C860F210CC876003578DA /* ColorPickerPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25C860E210CC876003578DA /* ColorPickerPopViewController.swift */; };
 		E25C8611210CE2AA003578DA /* ColorChangeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25C8610210CE2AA003578DA /* ColorChangeDelegate.swift */; };
+		E25C8613210CF228003578DA /* TabBar_MostViewed.png in Resources */ = {isa = PBXBuildFile; fileRef = E25C8612210CF228003578DA /* TabBar_MostViewed.png */; };
+		E25C8615210CF282003578DA /* QuickActions_Confirmation.png in Resources */ = {isa = PBXBuildFile; fileRef = E25C8614210CF282003578DA /* QuickActions_Confirmation.png */; };
 		E25DCA3720CC7DD30037B2B3 /* ClassColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DCA3620CC7DD30037B2B3 /* ClassColorPicker.swift */; };
 		E260477220B4F0720075DB03 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260477120B4F0720075DB03 /* Schedule.swift */; };
 		E26E04582072F3BD00EAA7DF /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26E04572072F3BD00EAA7DF /* KeychainError.swift */; };
@@ -214,6 +216,8 @@
 		E25C8601210CBFA5003578DA /* WeekendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekendViewController.swift; sourceTree = "<group>"; };
 		E25C860E210CC876003578DA /* ColorPickerPopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerPopViewController.swift; sourceTree = "<group>"; };
 		E25C8610210CE2AA003578DA /* ColorChangeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChangeDelegate.swift; sourceTree = "<group>"; };
+		E25C8612210CF228003578DA /* TabBar_MostViewed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabBar_MostViewed.png; sourceTree = SOURCE_ROOT; };
+		E25C8614210CF282003578DA /* QuickActions_Confirmation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = QuickActions_Confirmation.png; sourceTree = SOURCE_ROOT; };
 		E25DCA3620CC7DD30037B2B3 /* ClassColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassColorPicker.swift; sourceTree = "<group>"; };
 		E260477120B4F0720075DB03 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		E26E04572072F3BD00EAA7DF /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
@@ -359,6 +363,8 @@
 			isa = PBXGroup;
 			children = (
 				E24DA95E20547E3B00CDDDDA /* Main.storyboard */,
+				E25C8614210CF282003578DA /* QuickActions_Confirmation.png */,
+				E25C8612210CF228003578DA /* TabBar_MostViewed.png */,
 				E24DA95C20547E3B00CDDDDA /* LoginViewController.swift */,
 				E242650620CF18F80006052D /* EmptyViewController.swift */,
 				E2324BA020C988F4007D2D8F /* GradebookTableViewController.swift */,
@@ -608,7 +614,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E25C8613210CF228003578DA /* TabBar_MostViewed.png in Resources */,
 				E24DA96220547E3B00CDDDDA /* Assets.xcassets in Resources */,
+				E25C8615210CF282003578DA /* QuickActions_Confirmation.png in Resources */,
 				E24DA96020547E3B00CDDDDA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

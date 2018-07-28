@@ -22,8 +22,10 @@ class GradeColorPicker {
             return green
         } else if (letterGrade.prefix(1) == "B") || (letterGrade.prefix(1) == "C") {
             return yellow
-        } else {
+        } else if (letterGrade.prefix(1) == "D") || (letterGrade.prefix(1) == "F"){
             return red
+        } else {
+            return green
         }
     }
     

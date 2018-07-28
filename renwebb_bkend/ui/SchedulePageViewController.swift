@@ -36,6 +36,7 @@ class SchedulePageViewController: UIPageViewController {
         
         
         self.navigationItem.title = formatterForUi.string(from: dateOfCurrentPage!)
+        
         // Do any additional setup after loading the view.
     }
 

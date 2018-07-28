@@ -713,11 +713,11 @@
             </objects>
             <point key="canvasLocation" x="5871" y="527"/>
         </scene>
-        <!--Item-->
+        <!--Gradebook-->
         <scene sceneID="OyG-ao-HTO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X3B-AO-TkG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="IKD-Kt-fZ5"/>
+                    <tabBarItem key="tabBarItem" title="Gradebook" image="QuickActions_Confirmation.png" id="IKD-Kt-fZ5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gOi-Nf-JvH">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -732,11 +732,13 @@
             </objects>
             <point key="canvasLocation" x="4164" y="-1648"/>
         </scene>
-        <!--Item-->
+        <!--Schedule-->
         <scene sceneID="1nY-FW-txF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fxR-Sd-8Wg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="UfA-qF-0v1"/>
+                    <tabBarItem key="tabBarItem" title="Schedule" image="TabBar_MostViewed.png" id="UfA-qF-0v1">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kjo-yl-tWn">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -770,4 +772,8 @@
             <point key="canvasLocation" x="8447.826086956522" y="526.63043478260875"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="QuickActions_Confirmation.png" width="27" height="27"/>
+        <image name="TabBar_MostViewed.png" width="23" height="23"/>
+    </resources>
 </document>
