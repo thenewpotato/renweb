@@ -130,7 +130,7 @@ class ScheduleTableViewController: UITableViewController, ColorChangeDelegate {
     
     func colorChanged(color: UIColor, name: String) {
         tableView.reloadData()
-        var picker = ClassColorPicker()
+        let picker = ClassColorPicker()
         picker.changeColor(classCode: name, color: color)
     }
 

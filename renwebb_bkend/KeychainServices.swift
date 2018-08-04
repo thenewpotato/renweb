@@ -12,7 +12,7 @@ class KeychainServices {
     
     static let server = "https://tws-tn.client.renweb.com/pw/"
     
-    static func getKeychainItem() throws -> [String]? {
+    static func getLogin() throws -> [String]? {
         let query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
                                     kSecAttrServer as String: server,
                                     kSecMatchLimit as String: kSecMatchLimitOne,
@@ -32,7 +32,7 @@ class KeychainServices {
         return [account, password]
     }
     
-    static func addKeychainItem(username: String, password: String) throws {
+    static func addPassword(username: String, password: String) throws {
         let query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
                                     kSecAttrAccount as String: username,
                                     kSecAttrServer as String: server,

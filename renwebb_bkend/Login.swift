@@ -17,6 +17,7 @@ class Login {
     static var scheduleURL = String()
     static var gradeURLs = [String]()
     static var studentID = String()
+    static var studentName = String()
     
     static func constructHWURL(weekOf: Date) -> String {
         let formatter = DateFormatter()
@@ -85,6 +86,7 @@ class Login {
                             scheduleURL = try "https://tws-tn.client.renweb.com" + graybutton!.attr("href")
                             // TODO: check if all studentIDs are 7 digits
                             studentID = String(scheduleURL.suffix(7))
+                            studentName = try doc.select("h3").first()!.text()
                         } catch Exception.Error(let message) {
                             print(message)
                         } catch {
@@ -129,7 +131,7 @@ class Login {
     
     static func attemptKeychainLogin(completion: @escaping (Bool) -> ()) {
         do {
-            let loginComb: [String]? = try KeychainServices.getKeychainItem()
+            let loginComb: [String]? = try KeychainServices.getLogin()
             initializeRenweb(username: loginComb![0], password: loginComb![1], completion: { (success) -> Void in
                 if success {
                     completion(true)
@@ -160,10 +162,10 @@ class Login {
         initializeRenweb(username: username, password: password, completion: { (success) -> Void in
             if success {
                 do {
-                    let _ = try KeychainServices.getKeychainItem()
+                    let _ = try KeychainServices.getLogin()
                 } catch KeychainError.noPassword {
                     do {
-                        try KeychainServices.addKeychainItem(username: "thenewpotato", password: password)
+                        try KeychainServices.addPassword(username: "thenewpotato", password: password)
                     } catch KeychainError.unhandledError(let status) {
                         print(status)
                     } catch {
